@@ -5,28 +5,21 @@
   
 
   
-  <title>初见flask | CYK的个人主页</title>
+  <title>KGCN论文阅读笔记 | CYK的个人主页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近看了flask入门的书，其实前几天就写好了，一直没有晒出来，大致写了几个模块，还有不少问题。废话不多说，直接上图！ 注册和登录模块用了mysql数据库实现了注册和登录 使用了session模块实现cookie免登录 翻译模块百度翻译的签名实在过于复杂，我换用了某个不知名小网站的接口，稳定性不是很好  图片搜索下载模块成功白嫖百度图片，手动狗头    其他模块搜索引擎模块只是简单的重定向跳转就不">
+  <meta name="description" content="KGCN 论文笔记原文链接 : Knowledge Graph Convolutional Networks for Recommender Systems 1 问题定义1.1已知条件大小为 M 的用户集       $U &#x3D; {u_1,u_2, …,u_M }$ 大小为 N 的物品集       $V &#x3D; {v_1,v_2, …,v_N }$ 用户-物品互动关系矩阵       $Y \in \">
 <meta property="og:type" content="article">
-<meta property="og:title" content="初见flask">
-<meta property="og:url" content="http://patrick.github.io/2020/12/10/%E5%88%9D%E8%A7%81flask/index.html">
+<meta property="og:title" content="KGCN论文阅读笔记">
+<meta property="og:url" content="http://patrick.github.io/2022/02/07/KGCN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="CYK的个人主页">
-<meta property="og:description" content="最近看了flask入门的书，其实前几天就写好了，一直没有晒出来，大致写了几个模块，还有不少问题。废话不多说，直接上图！ 注册和登录模块用了mysql数据库实现了注册和登录 使用了session模块实现cookie免登录 翻译模块百度翻译的签名实在过于复杂，我换用了某个不知名小网站的接口，稳定性不是很好  图片搜索下载模块成功白嫖百度图片，手动狗头    其他模块搜索引擎模块只是简单的重定向跳转就不">
+<meta property="og:description" content="KGCN 论文笔记原文链接 : Knowledge Graph Convolutional Networks for Recommender Systems 1 问题定义1.1已知条件大小为 M 的用户集       $U &#x3D; {u_1,u_2, …,u_M }$ 大小为 N 的物品集       $V &#x3D; {v_1,v_2, …,v_N }$ 用户-物品互动关系矩阵       $Y \in \">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://s3.ax1x.com/2020/12/10/rFX6BT.png">
-<meta property="og:image" content="https://s3.ax1x.com/2020/12/10/rFX43R.jpg">
-<meta property="og:image" content="https://s3.ax1x.com/2020/12/10/rFj9Df.png">
-<meta property="og:image" content="https://s3.ax1x.com/2020/12/10/rFjGG9.jpg">
-<meta property="og:image" content="https://s3.ax1x.com/2020/12/10/rFjevq.jpg">
-<meta property="og:image" content="https://s3.ax1x.com/2020/12/10/rFjQVU.jpg">
-<meta property="article:published_time" content="2020-12-10T14:28:53.000Z">
-<meta property="article:modified_time" content="2020-12-10T15:13:19.944Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/293a4bb115824eafb3557e66d00d31bb.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUGF0cmlja19jeWs=,size_16,color_FFFFFF,t_70,g_se,x_16">
+<meta property="article:published_time" content="2022-02-06T16:37:47.780Z">
+<meta property="article:modified_time" content="2022-01-19T01:43:43.535Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="python">
-<meta property="article:tag" content="flask">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s3.ax1x.com/2020/12/10/rFX6BT.png">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/293a4bb115824eafb3557e66d00d31bb.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUGF0cmlja19jeWs=,size_16,color_FFFFFF,t_70,g_se,x_16">
   
     <link rel="alternate" href="/atom.xml" title="CYK的个人主页" type="application/atom+xml">
   
@@ -79,10 +72,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-初见flask" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-KGCN论文阅读笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/12/10/%E5%88%9D%E8%A7%81flask/" class="article-date">
-  <time datetime="2020-12-10T14:28:53.000Z" itemprop="datePublished">2020-12-10</time>
+    <a href="/2022/02/07/KGCN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2022-02-06T16:37:47.780Z" itemprop="datePublished">2022-02-07</time>
 </a>
     
   </div>
@@ -93,7 +86,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      初见flask
+      KGCN论文阅读笔记
     </h1>
   
 
@@ -101,46 +94,48 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近看了flask入门的书，其实前几天就写好了，一直没有晒出来，大致写了几个模块，还有不少问题。<br>废话不多说，直接上图！</p>
-<h1 id="注册和登录模块"><a href="#注册和登录模块" class="headerlink" title="注册和登录模块"></a>注册和登录模块</h1><p>用了mysql数据库实现了注册和登录<br><a href="https://imgchr.com/i/rFX6BT" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFX6BT.png" alt="rFX6BT.png"></a></p>
-<p>使用了session模块实现cookie免登录<br><a href="https://imgchr.com/i/rFX43R" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFX43R.jpg" alt="rFX43R.jpg"></a></p>
-<h1 id="翻译模块"><a href="#翻译模块" class="headerlink" title="翻译模块"></a>翻译模块</h1><p>百度翻译的签名实在过于复杂，我换用了某个不知名小网站的接口，稳定性不是很好</p>
-<p><a href="https://imgchr.com/i/rFj9Df" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFj9Df.png" alt="rFj9Df.png"></a></p>
-<h1 id="图片搜索下载模块"><a href="#图片搜索下载模块" class="headerlink" title="图片搜索下载模块"></a>图片搜索下载模块</h1><p>成功白嫖百度图片，手动狗头</p>
-<p><a href="https://imgchr.com/i/rFjGG9" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFjGG9.jpg" alt="rFjGG9.jpg"></a></p>
-<p><a href="https://imgchr.com/i/rFjevq" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFjevq.jpg" alt="rFjevq.jpg"></a></p>
-<p><a href="https://imgchr.com/i/rFjQVU" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFjQVU.jpg" alt="rFjQVU.jpg"></a></p>
-<h1 id="其他模块"><a href="#其他模块" class="headerlink" title="其他模块"></a>其他模块</h1><p>搜索引擎模块只是简单的重定向跳转就不上图了。<br>视频下载模块遇到一些问题，还有待开发。</p>
-<h1 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h1><p>这是项目地址，有兴趣的小伙伴可以看看，欢迎提出宝贵的意见哦！<br><a href="https://github.com/Patrick-CH/webcompass" target="_blank" rel="noopener">https://github.com/Patrick-CH/webcompass</a></p>
-<h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><p>网站本身并不复杂，开发过程中也碰到不少问题和bug。从0到1的过程还是非常感人的。有同样学习flask的小伙伴欢迎一起来交流哦。留下我的邮箱吧，<a href="mailto:1648109733@qq.com">1648109733@qq.com</a>。记录一下我写的第一个网站，留作纪念吧！</p>
+        <h1 id="KGCN-论文笔记"><a href="#KGCN-论文笔记" class="headerlink" title="KGCN 论文笔记"></a>KGCN 论文笔记</h1><p>原文链接 : <a href="https://arxiv.org/pdf/1904.12575.pdf" target="_blank" rel="noopener">Knowledge Graph Convolutional Networks for Recommender Systems</a></p>
+<h2 id="1-问题定义"><a href="#1-问题定义" class="headerlink" title="1 问题定义"></a>1 问题定义</h2><h3 id="1-1已知条件"><a href="#1-1已知条件" class="headerlink" title="1.1已知条件"></a>1.1已知条件</h3><p>大小为 M 的用户集       $U = {u_1,u_2, …,u_M }$</p>
+<p>大小为 N 的物品集       $V = {v_1,v_2, …,v_N }$</p>
+<p>用户-物品互动关系矩阵       $Y \in \mathbb{R}^{M×N}$<br>$$<br>Y_{uv} =<br>\left{<br>             \begin{array}{<strong>lr</strong>}<br>             1, &amp; 用户 u 和 物品 v 之间存在点击、浏览、购买等关系 \<br>             0, &amp; 用户 u 与 物品 v 之间不存在上述关系 \<br>             \end{array}<br>\right.<br>$$</p>
+<p>知识图谱  $G$  由 实体-关系-实体 三元组    $(h,r,t)$    组成 </p>
+<p>​    其中    $h,t \in E\ \ ;\ r \in\ R$</p>
+<p>​    例如三元组    $(A\ Song\ of\ Ice\ and\ Fire,\ book.book.author,\  George\ Martin) $    表示t George Martin 写了书 “A Song of Ice and Fire”</p>
+<p>在许多推荐系统中，物品    $v \in V$    可能也是知识图谱中的实体。</p>
+<p>例如，在一个书本推荐系统中 “A Song of Ice and Fire” 也可以是知识图谱的实体    $e \in E$ 。</p>
+<h3 id="1-2-需要求解的问题"><a href="#1-2-需要求解的问题" class="headerlink" title="1.2 需要求解的问题"></a>1.2 需要求解的问题</h3><p>给出    $Y\ , \ G$    预测用户 <em>u</em> 对物品  <em>v</em> 是否存在潜在的兴趣。 </p>
+<p>需要学习一个预测函数<br>$$<br>\hat{y}<em>{uv} =  F(u,v|\Theta ,Y,G)<br>$$<br>$\hat{y}</em>{uv}$    表示用户  u  喜爱物品  v  的潜在可能性</p>
+<p>$\Theta$    表示函数 F 的模型参数</p>
+<h2 id="2-KGCN-层"><a href="#2-KGCN-层" class="headerlink" title="2 KGCN 层"></a>2 KGCN 层</h2><p>$N(v)$    表示与物品 (实体) 直接相连的实体的集合</p>
+<p>$r_{e_i,e_j}$    表示实体    $e_i,\ e_j$    之间的关系</p>
+<p>用函数  $g:\ \mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^d $   来计算用户和关系之间的关联，其中$u\in \mathbb{R}^d ; u\in \mathbb{R}^d$</p>
+<p>$\pi^u_r$  表示关系  $r$  对用户  $u$  的重要性<br>$$<br>\pi^u_r\ = g(u,v)<br>$$</p>
+<p>采取线性组合来描述拓扑优先级，</p>
+<p>和  $v$  直接相连接的实体  $e$  与  $v, e$  之间关系对用户 $u$ 的重要性  $\pi^u_r$   的线性组合<br>$$<br>V^u_{N(v)} = \sum_{e\in N(v)} \tilde{\pi}^u_{r_{v,e}}e<br>$$</p>
+<p>$\tilde{\pi}^u_{r_{v,e}}$  是归一化之后的 用户-关系 重要性<br>$$<br>\tilde{\pi}^u_{r_{v,e}} = \frac {exp(\pi^u_{r_{v,e}})}{\sum_{v_e\in N(v)}exp(\pi^u_{r_{v,e}})}<br>$$</p>
+<p>在实际应用中，$N(e)$  的大小随着不同实体 e 的变化而剧烈变化，因此我们一般早取样时候，对所有实体取一个固定大小的邻居集合。将 v 的邻居的集合表示为 $S(v) \triangleq {e | e ∼ N (v)}$     并且  $|S(v)|=K $  是一个常量。</p>
+<p>KGCN的最后一步，是对实体向量 v，和邻居集合的表示向量聚合为一个向量</p>
+<p>由三种聚合的方式，如下：<br>$$<br>agg_{sum} = \sigma(W\cdot (V + V^u_{S(v)}) + b)<br>$$</p>
+<p>$$<br>agg_{concat} = \sigma(W\cdot concat(V, V^u_{S(v)}) + b)<br>$$</p>
+<p>$$<br>agg_{neighbor} = \sigma(W\cdot V^u_{S(v)} + b)<br>$$</p>
+<h2 id="3-学习算法"><a href="#3-学习算法" class="headerlink" title="3 学习算法"></a>3 学习算法</h2><p><img src="https://img-blog.csdnimg.cn/293a4bb115824eafb3557e66d00d31bb.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUGF0cmlja19jeWs=,size_16,color_FFFFFF,t_70,g_se,x_16" alt="学习算法"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://patrick.github.io/2020/12/10/%E5%88%9D%E8%A7%81flask/" data-id="ckzbhpi6w0005vguz3l7hhse3" class="article-share-link">Share</a>
+      <a data-url="http://patrick.github.io/2022/02/07/KGCN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" data-id="ckzbhpi6r0001vguzdgqzdv5t" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flask/" rel="tag">flask</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2021/03/22/%E5%88%86%E4%BA%AB%E5%88%9A%E5%86%99%E5%AE%8C%E7%9A%84%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          分享刚写完的算法分析实验
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/05/15/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%B0%9D%E8%AF%95python%E7%9A%84gui/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/02/06/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%87%8D%E5%BB%BA-binary-tree-rebuild/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">第一次尝试python的gui</div>
+      <div class="article-nav-title">二叉树重建 binary tree rebuild</div>
     </a>
   
 </nav>
