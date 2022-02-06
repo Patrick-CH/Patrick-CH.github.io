@@ -1,573 +1,896 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-  
-  <title>CYK的个人主页</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"patrick.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
   <meta property="og:type" content="website">
-<meta property="og:title" content="CYK的个人主页">
+<meta property="og:title" content="CYK的博客">
 <meta property="og:url" content="http://patrick.github.io/index.html">
-<meta property="og:site_name" content="CYK的个人主页">
+<meta property="og:site_name" content="CYK的博客">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="CYK的个人主页" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<link rel="canonical" href="http://patrick.github.io/">
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">CYK的个人主页</a>
-      </h1>
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>CYK的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">CYK的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">welcome</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
       
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">welcome</a>
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://patrick.github.io/2022/02/07/KGCN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CYK的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/07/KGCN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">KGCN 论文阅读笔记</a>
         </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://Patrick.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-KGCN论文阅读笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/07/KGCN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time datetime="2022-02-06T16:40:00.000Z" itemprop="datePublished">2022-02-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/07/KGCN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">KGCN 论文阅读笔记</a>
-    </h1>
-  
 
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-02-07 00:40:00 / Modified: 00:44:09" itemprop="dateCreated datePublished" datetime="2022-02-07T00:40:00+08:00">2022-02-07</time>
+            </span>
+
+          
+
+        </div>
       </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原文链接 : <a href="https://arxiv.org/pdf/1904.12575.pdf" target="_blank" rel="noopener">Knowledge Graph Convolutional Networks for Recommender Systems</a></p>
-<h2 id="1-问题定义"><a href="#1-问题定义" class="headerlink" title="1 问题定义"></a>1 问题定义</h2><h3 id="1-1已知条件"><a href="#1-1已知条件" class="headerlink" title="1.1已知条件"></a>1.1已知条件</h3><p>大小为 M 的用户集       $U = {u_1,u_2, …,u_M }$</p>
-<p>大小为 N 的物品集       $V = {v_1,v_2, …,v_N }$</p>
-<p>用户-物品互动关系矩阵       $Y \in \mathbb{R}^{M×N}$<br>$$<br>Y_{uv} =<br>\left{<br>             \begin{array}{<strong>lr</strong>}<br>             1, &amp; 用户 u 和 物品 v 之间存在点击、浏览、购买等关系 \<br>             0, &amp; 用户 u 与 物品 v 之间不存在上述关系 \<br>             \end{array}<br>\right.<br>$$</p>
-<p>知识图谱  $G$  由 实体-关系-实体 三元组    $(h,r,t)$    组成 </p>
-<p>​    其中    $h,t \in E\ \ ;\ r \in\ R$</p>
-<p>​    例如三元组    $(A\ Song\ of\ Ice\ and\ Fire,\ book.book.author,\  George\ Martin) $    表示t George Martin 写了书 “A Song of Ice and Fire”</p>
-<p>在许多推荐系统中，物品    $v \in V$    可能也是知识图谱中的实体。</p>
-<p>例如，在一个书本推荐系统中 “A Song of Ice and Fire” 也可以是知识图谱的实体    $e \in E$ 。</p>
-<h3 id="1-2-需要求解的问题"><a href="#1-2-需要求解的问题" class="headerlink" title="1.2 需要求解的问题"></a>1.2 需要求解的问题</h3><p>给出    $Y\ , \ G$    预测用户 <em>u</em> 对物品  <em>v</em> 是否存在潜在的兴趣。 </p>
-<p>需要学习一个预测函数<br>$$<br>\hat{y}<em>{uv} =  F(u,v|\Theta ,Y,G)<br>$$<br>$\hat{y}</em>{uv}$    表示用户  u  喜爱物品  v  的潜在可能性</p>
-<p>$\Theta$    表示函数 F 的模型参数</p>
-<h2 id="2-KGCN-层"><a href="#2-KGCN-层" class="headerlink" title="2 KGCN 层"></a>2 KGCN 层</h2><p>$N(v)$    表示与物品 (实体) 直接相连的实体的集合</p>
-<p>$r_{e_i,e_j}$    表示实体    $e_i,\ e_j$    之间的关系</p>
-<p>用函数  $g:\ \mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^d $   来计算用户和关系之间的关联，其中$u\in \mathbb{R}^d ; u\in \mathbb{R}^d$</p>
-<p>$\pi^u_r$  表示关系  $r$  对用户  $u$  的重要性<br>$$<br>\pi^u_r\ = g(u,v)<br>$$</p>
-<p>采取线性组合来描述拓扑优先级，</p>
-<p>和  $v$  直接相连接的实体  $e$  与  $v, e$  之间关系对用户 $u$ 的重要性  $\pi^u_r$   的线性组合<br>$$<br>V^u_{N(v)} = \sum_{e\in N(v)} \tilde{\pi}^u_{r_{v,e}}e<br>$$</p>
-<p>$\tilde{\pi}^u_{r_{v,e}}$  是归一化之后的 用户-关系 重要性<br>$$<br>\tilde{\pi}^u_{r_{v,e}} = \frac {exp(\pi^u_{r_{v,e}})}{\sum_{v_e\in N(v)}exp(\pi^u_{r_{v,e}})}<br>$$</p>
-<p>在实际应用中，$N(e)$  的大小随着不同实体 e 的变化而剧烈变化，因此我们一般早取样时候，对所有实体取一个固定大小的邻居集合。将 v 的邻居的集合表示为 $S(v) \triangleq {e | e ∼ N (v)}$     并且  $|S(v)|=K $  是一个常量。</p>
-<p>KGCN的最后一步，是对实体向量 v，和邻居集合的表示向量聚合为一个向量</p>
-<p>由三种聚合的方式，如下：<br>$$<br>agg_{sum} = \sigma(W\cdot (V + V^u_{S(v)}) + b)<br>$$</p>
-<p>$$<br>agg_{concat} = \sigma(W\cdot concat(V, V^u_{S(v)}) + b)<br>$$</p>
-<p>$$<br>agg_{neighbor} = \sigma(W\cdot V^u_{S(v)} + b)<br>$$</p>
-<h2 id="3-学习算法"><a href="#3-学习算法" class="headerlink" title="3 学习算法"></a>3 学习算法</h2><p><img src="https://img-blog.csdnimg.cn/293a4bb115824eafb3557e66d00d31bb.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUGF0cmlja19jeWs=,size_16,color_FFFFFF,t_70,g_se,x_16" alt="学习算法"></p>
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>原文链接 : <a href="https://arxiv.org/pdf/1904.12575.pdf" target="_blank" rel="noopener">Knowledge Graph Convolutional Networks for Recommender Systems</a></p>
+<h2 id="问题定义">1 问题定义</h2>
+<h3 id="已知条件">1.1已知条件</h3>
+<p>大小为 M 的用户集 <span class="math inline">\(U = \{u_1,u_2, ...,u_M \}\)</span></p>
+<p>大小为 N 的物品集 <span class="math inline">\(V = \{v_1,v_2, ...,v_N \}\)</span></p>
+<p>用户-物品互动关系矩阵 <span class="math inline">\(Y \in \mathbb{R}^{M×N}\)</span> <span class="math display">\[
+Y_{uv} =
+\left\{  
+             \begin{array}{**lr**}  
+             1, &amp; 用户 u 和 物品 v 之间存在点击、浏览、购买等关系 \\  
+             0, &amp; 用户 u 与 物品 v 之间不存在上述关系 \\  
+             \end{array}  
+\right.
+\]</span></p>
+<p>知识图谱 <span class="math inline">\(G\)</span> 由 实体-关系-实体 三元组 <span class="math inline">\((h,r,t)\)</span> 组成</p>
+<p>​ 其中 <span class="math inline">\(h,t \in E\ \ ;\ r \in\ R\)</span></p>
+<p>​ 例如三元组 $(A Song of Ice and Fire, book.book.author,  George Martin) $ 表示t George Martin 写了书 “A Song of Ice and Fire&quot;</p>
+<p>在许多推荐系统中，物品 <span class="math inline">\(v \in V\)</span> 可能也是知识图谱中的实体。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/02/07/KGCN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://patrick.github.io/2022/02/07/KGCN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" data-id="ckzbhweoe0000c4uzdrf0epl0" class="article-share-link">Share</a>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GNN/" rel="tag">GNN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/KGCN/" rel="tag">KGCN</a></li></ul>
-
-    </footer>
-  </div>
   
-</article>
-
-
   
-    <article id="post-二叉树重建-binary-tree-rebuild" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/06/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%87%8D%E5%BB%BA-binary-tree-rebuild/" class="article-date">
-  <time datetime="2022-02-06T14:58:18.000Z" itemprop="datePublished">2022-02-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/06/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%87%8D%E5%BB%BA-binary-tree-rebuild/">二叉树重建 binary tree rebuild</a>
-    </h1>
-  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://patrick.github.io/2022/02/06/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%87%8D%E5%BB%BA-binary-tree-rebuild/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CYK的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/06/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%87%8D%E5%BB%BA-binary-tree-rebuild/" class="post-title-link" itemprop="url">二叉树重建 binary tree rebuild</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-02-06 22:58:18 / Modified: 23:47:38" itemprop="dateCreated datePublished" datetime="2022-02-06T22:58:18+08:00">2022-02-06</time>
+            </span>
+
+          
+
+        </div>
       </header>
+
     
-    <div class="article-entry" itemprop="articleBody">
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>L2-006 树的遍历 (25 分)</p>
+          <p>L2-006 树的遍历 (25 分)</p>
 <p>给定一棵二叉树的后序遍历和中序遍历，请你输出其层序遍历的序列。这里假设键值都是互不相等的正整数。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第一行给出一个正整数<em>N</em>（≤30），是二叉树中结点的个数。第二行给出其后序遍历序列。第三行给出其中序遍历序列。数字间以空格分隔。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出该树的层序遍历的序列。数字间以1个空格分隔，行首尾不得有多余空格。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">7</span><br><span class="line">2 3 1 5 7 6 4</span><br><span class="line">1 2 3 4 5 6 7</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 1 6 3 5 7 2</span><br></pre></td></tr></table></figure>
-
-
-
-<p>首先看后续遍历</p>
-<p>对于后序遍历根节点一定是最后访问，于是开可以确定根节点一定是4</p>
-<blockquote>
-<p>2 3 1 5 7 6 <u>4</u></p>
-</blockquote>
-<p>再看中序遍历</p>
-<blockquote>
-<p>1 2 3 <u>4</u> 5 6 7</p>
-</blockquote>
-<p>现在已知根节点为4，</p>
-<p>所以左子树的中序遍历为</p>
-<blockquote>
-<p>1 2 3</p>
-</blockquote>
-<p>右子树的中序遍历为</p>
-<blockquote>
-<p>5 6 7</p>
-</blockquote>
-<p>再回到后序遍历中，已知左子树和右子树的划分，</p>
-<p>所以 左子树后续遍历为</p>
-<blockquote>
-<p>2 3 1</p>
-</blockquote>
-<p>右子树后续遍历为</p>
-<blockquote>
-<p>5 7 6</p>
-</blockquote>
-<p>分割后如下图所示</p>
-<p><img src="https://img-blog.csdnimg.cn/c142b71cac3d4d1097effdaf2afff968.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUGF0cmlja19jeWs=,size_10,color_FFFFFF,t_70,g_se,x_16" alt="图1"></p>
-<p>继续分割，根据后续遍历</p>
-<p>左侧123中1为根节点</p>
-<p>右侧567中6为根节点</p>
-<p><img src="https://img-blog.csdnimg.cn/0e365c67a1fa43fba2388011afdc7a7d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUGF0cmlja19jeWs=,size_11,color_FFFFFF,t_70,g_se,x_16" alt="图2"></p>
-<p><img src="https://img-blog.csdnimg.cn/c6b442101c9a4455ae23ff703b90941c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUGF0cmlja19jeWs=,size_11,color_FFFFFF,t_70,g_se,x_16" alt="图3"></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    TreeNode* left;</span><br><span class="line">    TreeNode* right;</span><br><span class="line">    <span class="keyword">int</span> No;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">myfind</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a, <span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i : a)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> ( i == num) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; b_ord, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; m_ord, TreeNode* root)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> size = b_ord.size();</span><br><span class="line">    root-&gt;No = b_ord[size<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">if</span> (size == <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// base case 最简单的情况，只有一个节点</span></span><br><span class="line">        root-&gt;left = <span class="literal">nullptr</span>;</span><br><span class="line">        root-&gt;right = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;    </span><br><span class="line">    TreeNode* l = <span class="keyword">new</span> TreeNode();</span><br><span class="line">    TreeNode* r = <span class="keyword">new</span> TreeNode();</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; l_mid;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; r_mid;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; l_behind;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; r_behind;</span><br><span class="line">    <span class="keyword">bool</span> f = <span class="literal">false</span>;</span><br><span class="line">    <span class="comment">// 划分中序遍历 为 左子树 右子树两部分</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (b_ord[size<span class="number">-1</span>] == m_ord[i]) f = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (!f) l_mid.push_back(m_ord[i]);</span><br><span class="line">            <span class="keyword">else</span> r_mid.push_back(m_ord[i]);        </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 划分后续遍历 为 左子树 右子树两部分</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (myfind(l_mid, b_ord[i])) </span><br><span class="line">        &#123;</span><br><span class="line">            l_behind.push_back(b_ord[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (myfind(r_mid, b_ord[i])) </span><br><span class="line">        &#123;</span><br><span class="line">            r_behind.push_back(b_ord[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;    </span><br><span class="line">    <span class="keyword">if</span> (l_mid.size() &gt; <span class="number">0</span>) build(l_behind, l_mid, l); <span class="comment">// 递归构建</span></span><br><span class="line">    <span class="keyword">else</span> l = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">if</span> (r_mid.size() &gt; <span class="number">0</span>) build(r_behind, r_mid, r);</span><br><span class="line">    <span class="keyword">else</span> r = <span class="literal">nullptr</span>;</span><br><span class="line">    root-&gt;left = l;</span><br><span class="line">    root-&gt;right = r;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">visit</span><span class="params">(TreeNode* root, <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 层序遍历 其实就是BFS 用一个队列就可以解决</span></span><br><span class="line">    <span class="built_in">queue</span>&lt;TreeNode*&gt; q;</span><br><span class="line">    q.push(root);</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (!q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        TreeNode* p = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">if</span> (cnt != n<span class="number">-1</span>) <span class="built_in">cout</span> &lt;&lt; p-&gt;No &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; p-&gt;No;</span><br><span class="line">        cnt++;</span><br><span class="line">        <span class="keyword">if</span> (p-&gt;left) q.push(p-&gt;left);</span><br><span class="line">        <span class="keyword">if</span> (p-&gt;right) q.push(p-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    freopen(<span class="string">"in.txt"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    freopen(<span class="string">"out.txt"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>); <span class="comment">// 输入输出重定向，方便调试</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">behind_ord</span><span class="params">(n, <span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">mid_ord</span><span class="params">(n, <span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; behind_ord[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; mid_ord[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    TreeNode* root = <span class="keyword">new</span> TreeNode();</span><br><span class="line">    build(behind_ord, mid_ord, root);</span><br><span class="line"></span><br><span class="line">    visit(root, n);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>很久没更新了，最近比较忙。今天刷完题才想起来可以顺手更新一下。</p>
-
+<h3 id="输入格式">输入格式：</h3>
+<p>输入第一行给出一个正整数<em>N</em>（≤30），是二叉树中结点的个数。第二行给出其后序遍历序列。第三行给出其中序遍历序列。数字间以空格分隔。</p>
+<h3 id="输出格式">输出格式：</h3>
+<p>在一行中输出该树的层序遍历的序列。数字间以1个空格分隔，行首尾不得有多余空格。</p>
+<h3 id="输入样例">输入样例：</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">7</span><br><span class="line">2 3 1 5 7 6 4</span><br><span class="line">1 2 3 4 5 6 7</span><br></pre></td></tr></table></figure>
+<h3 id="输出样例">输出样例：</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 1 6 3 5 7 2</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/02/06/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%87%8D%E5%BB%BA-binary-tree-rebuild/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://patrick.github.io/2022/02/06/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%87%8D%E5%BB%BA-binary-tree-rebuild/" data-id="ckzbhweoo0004c4uzgj5h2iz6" class="article-share-link">Share</a>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/binary-tree/" rel="tag">binary tree</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/" rel="tag">c++</a></li></ul>
-
-    </footer>
-  </div>
   
-</article>
-
-
   
-    <article id="post-分享刚写完的算法分析实验" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/03/22/%E5%88%86%E4%BA%AB%E5%88%9A%E5%86%99%E5%AE%8C%E7%9A%84%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C/" class="article-date">
-  <time datetime="2021-03-22T13:17:03.000Z" itemprop="datePublished">2021-03-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/22/%E5%88%86%E4%BA%AB%E5%88%9A%E5%86%99%E5%AE%8C%E7%9A%84%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C/">分享刚写完的算法分析实验</a>
-    </h1>
-  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://patrick.github.io/2021/03/22/%E5%88%86%E4%BA%AB%E5%88%9A%E5%86%99%E5%AE%8C%E7%9A%84%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CYK的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/22/%E5%88%86%E4%BA%AB%E5%88%9A%E5%86%99%E5%AE%8C%E7%9A%84%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C/" class="post-title-link" itemprop="url">分享刚写完的算法分析实验</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-03-22 21:17:03 / Modified: 21:23:23" itemprop="dateCreated datePublished" datetime="2021-03-22T21:17:03+08:00">2021-03-22</time>
+            </span>
+
+          
+
+        </div>
       </header>
+
     
-    <div class="article-entry" itemprop="articleBody">
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h1 id="AlgorithmExperiment"><a href="#AlgorithmExperiment" class="headerlink" title="AlgorithmExperiment"></a>AlgorithmExperiment</h1><p>算法分析课实验<br>采用分治法完成如下任务：</p>
-<h2 id="i-中位数问题"><a href="#i-中位数问题" class="headerlink" title="i.    中位数问题"></a>i.    中位数问题</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>设X[ 0 : n - 1]和Y[ 0 : n – 1 ]为两个数组，每个数组中含有n个已排好序的数。找出X和Y的2n个数的中位数。  </p>
-<h3 id="编程任务"><a href="#编程任务" class="headerlink" title="编程任务"></a>编程任务</h3><p>   利用分治策略试设计一个O (log n)时间的算法求出这2n个数的中位数。</p>
-<h3 id="数据输入"><a href="#数据输入" class="headerlink" title="数据输入"></a>数据输入</h3><p>   由文件input.txt提供输入数据。文件的第1行中有1个正整数n（n&lt;=200），表示每个数组有n个数。接下来的两行分别是X，Y数组的元素。</p>
-<h3 id="结果输出"><a href="#结果输出" class="headerlink" title="结果输出"></a>结果输出</h3><p>   程序运行结束时，将计算出的中位数输出到文件output.txt中。</p>
-<h4 id="输入文件示例"><a href="#输入文件示例" class="headerlink" title="输入文件示例"></a>输入文件示例</h4><p>input.txt</p>
+          <h1 id="algorithmexperiment">AlgorithmExperiment</h1>
+<p>算法分析课实验 采用分治法完成如下任务： ## i. 中位数问题 ### 问题描述 设X[ 0 : n - 1]和Y[ 0 : n – 1 ]为两个数组，每个数组中含有n个已排好序的数。找出X和Y的2n个数的中位数。<br>
+### 编程任务 利用分治策略试设计一个O (log n)时间的算法求出这2n个数的中位数。 ### 数据输入 由文件input.txt提供输入数据。文件的第1行中有1个正整数n（n&lt;=200），表示每个数组有n个数。接下来的两行分别是X，Y数组的元素。 ### 结果输出 程序运行结束时，将计算出的中位数输出到文件output.txt中。 #### 输入文件示例 input.txt</p>
 <pre><code>3
 5 15 18
-3 14 21</code></pre><h4 id="输出文件示例"><a href="#输出文件示例" class="headerlink" title="输出文件示例"></a>输出文件示例</h4><p>output.txt</p>
-<pre><code>14</code></pre><h3 id="实现提示"><a href="#实现提示" class="headerlink" title="实现提示"></a>实现提示</h3><p>   比较两个序列的中位数大小，如果两个数相等，则该数为整个2n个数据的中位数，否则通过比较，分别减少两个序列的查找范围，确定查找的起止位置，继续查找。</p>
+3 14 21</code></pre>
+<h4 id="输出文件示例">输出文件示例</h4>
+<p>output.txt</p>
+<pre><code>14</code></pre>
+<h3 id="实现提示">实现提示</h3>
+<p>比较两个序列的中位数大小，如果两个数相等，则该数为整个2n个数据的中位数，否则通过比较，分别减少两个序列的查找范围，确定查找的起止位置，继续查找。</p>
 <hr>
-<h2 id="ii-Gray码问题"><a href="#ii-Gray码问题" class="headerlink" title="ii.     Gray码问题"></a>ii.     Gray码问题</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>   Gray码是一个长度为2n的序列。序列中无相同的元素，每个元素都是长度为n位的串，相邻元素恰好只有一位不同。用分治策略设计一个算法对任意的n构造相应的Gray码。  </p>
-<h3 id="编程任务-1"><a href="#编程任务-1" class="headerlink" title="编程任务"></a>编程任务</h3><p>   利用分治策略试设计一个算法对任意的n构造相应的Gray码。</p>
-<h3 id="数据输入-1"><a href="#数据输入-1" class="headerlink" title="数据输入"></a>数据输入</h3><p>   由文件input.txt提供输入数据n。</p>
-<h3 id="结果输出-1"><a href="#结果输出-1" class="headerlink" title="结果输出"></a>结果输出</h3><p>   程序运行结束时，将得到的所有编码输出到文件output.txt中。</p>
-<h4 id="输入文件示例-1"><a href="#输入文件示例-1" class="headerlink" title="输入文件示例"></a>输入文件示例</h4><p>input.txt    </p>
-<pre><code>3</code></pre><h4 id="输出文件示例-1"><a href="#输出文件示例-1" class="headerlink" title="输出文件示例"></a>输出文件示例</h4><p>output.txt</p>
-<pre><code>0   0   0
-0   0   1
-0   1   1
-0   1   0
-1   1   0
-1   1   1
-1   0   1
-1   0   0</code></pre><h3 id="实现提示-1"><a href="#实现提示-1" class="headerlink" title="实现提示"></a>实现提示</h3><p>   把原问题分解为两个子问题，分别对两个子问题的每个数组后一位加0和1。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><h5 id="中位数问题"><a href="#中位数问题" class="headerlink" title="中位数问题"></a>中位数问题</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> MidNum;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MidNum</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ArrayList&lt;Integer&gt; <span class="title">ReadInput</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        BufferedReader in = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            in = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(<span class="string">"src\\MidNum\\in.txt"</span>));</span><br><span class="line">            String sb;</span><br><span class="line">            ArrayList&lt;Integer&gt; nums = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">            <span class="keyword">while</span> (in.ready()) &#123;</span><br><span class="line">                sb = (<span class="keyword">new</span> String(in.readLine()));</span><br><span class="line">                String[] s;</span><br><span class="line">                s = sb.split(<span class="string">" "</span>);</span><br><span class="line">                <span class="keyword">for</span>(String i : s)&#123;</span><br><span class="line">                    nums.add(Integer.parseInt(i));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            in.close();</span><br><span class="line">            <span class="keyword">return</span> nums;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 求单个数组的中位数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">mid</span><span class="params">(ArrayList&lt;Integer&gt; arrayList)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = arrayList.size();</span><br><span class="line">        <span class="keyword">int</span> mid = len/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(mid*<span class="number">2</span> == len)&#123;</span><br><span class="line">            <span class="keyword">return</span> (arrayList.get(mid) + arrayList.get(mid-<span class="number">1</span>))/<span class="number">2.0</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> (<span class="keyword">double</span>)arrayList.get(mid);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 取数组的一半，front为真则取前一半，反之取后一半</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ArrayList&lt;Integer&gt; <span class="title">half</span><span class="params">(ArrayList&lt;Integer&gt; arrayList, <span class="keyword">boolean</span> front)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = arrayList.size();</span><br><span class="line">        <span class="keyword">int</span> mid = len/<span class="number">2</span>;</span><br><span class="line">        ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">if</span>(front) &#123;</span><br><span class="line">            <span class="keyword">if</span> (mid * <span class="number">2</span> == len) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; mid; i++) &#123;</span><br><span class="line">                    list.add(arrayList.get(i));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; mid; i++) &#123;</span><br><span class="line">                    list.add(arrayList.get(i));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> list;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (mid * <span class="number">2</span> == len) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = mid; i &lt; len; i++) &#123;</span><br><span class="line">                    list.add(arrayList.get(i));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = mid + <span class="number">1</span>; i &lt; len; i++) &#123;</span><br><span class="line">                    list.add(arrayList.get(i));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> list;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 计算合并后的中位数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">getMid</span><span class="params">(ArrayList&lt;Integer&gt; X, ArrayList&lt;Integer&gt; Y)</span></span>&#123;</span><br><span class="line">        <span class="keyword">double</span> mid_x = mid(X);</span><br><span class="line">        <span class="keyword">double</span> mid_y = mid(Y);</span><br><span class="line">        <span class="comment">// 如果X Y只有一个数，则返回他们平均数</span></span><br><span class="line">        <span class="keyword">if</span> (X.size() == <span class="number">1</span> &amp;&amp; Y.size()==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> (mid_x + mid_y)/<span class="number">2.0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (mid_x &gt; mid_y)&#123;</span><br><span class="line">            <span class="comment">// 如果X的中位数大于Y的，取X的前半部分，Y的后半部分</span></span><br><span class="line">            X = half(X, <span class="keyword">true</span>);</span><br><span class="line">            Y = half(Y, <span class="keyword">false</span>);</span><br><span class="line">            <span class="keyword">return</span> getMid(X, Y);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> ( mid_x == mid_y)&#123;</span><br><span class="line">            <span class="comment">// 如果X Y中位数相等，返回这个值</span></span><br><span class="line">            <span class="keyword">return</span> (<span class="keyword">double</span>) mid_x;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 如果X的中位数小于Y的，取X的后半部分，Y的前半部分</span></span><br><span class="line">            X = half(X, <span class="keyword">false</span>);</span><br><span class="line">            Y = half(Y, <span class="keyword">true</span>);</span><br><span class="line">            <span class="keyword">return</span> getMid(X, Y);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">output</span><span class="params">(<span class="keyword">double</span> x)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        BufferedWriter out = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> FileWriter(<span class="string">"src\\MidNum\\out.txt"</span>));</span><br><span class="line">        out.write(String.format(<span class="string">"%f"</span>, x));</span><br><span class="line">        out.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 读取输入</span></span><br><span class="line">        ArrayList&lt;Integer&gt; nums = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            nums = ReadInput();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 将输入写入X Y</span></span><br><span class="line">        ArrayList&lt;Integer&gt; X = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        ArrayList&lt;Integer&gt; Y = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= nums.get(<span class="number">0</span>); i++) &#123;</span><br><span class="line">            X.add(nums.get(i));</span><br><span class="line">            Y.add(nums.get(i + nums.get(<span class="number">0</span>)));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 计算中位数</span></span><br><span class="line">        <span class="keyword">double</span> result = getMid(X, Y);</span><br><span class="line">        <span class="comment">// 输出结果</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            output(result);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="格雷码问题"><a href="#格雷码问题" class="headerlink" title="格雷码问题"></a>格雷码问题</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Grey;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Grey</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">ReadInput</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        BufferedReader in = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            in = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(<span class="string">"src\\Grey\\in.txt"</span>));</span><br><span class="line">            String s;</span><br><span class="line">            <span class="keyword">if</span> (in.ready()) &#123;</span><br><span class="line">                s = (<span class="keyword">new</span> String(in.readLine()));</span><br><span class="line">                in.close();</span><br><span class="line">                <span class="keyword">return</span> Integer.parseInt(s);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ArrayList&lt;StringBuffer&gt; <span class="title">getGrey</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        ArrayList&lt;StringBuffer&gt; list = <span class="keyword">new</span> ArrayList&lt;StringBuffer&gt;();</span><br><span class="line">        <span class="keyword">if</span> (n==<span class="number">1</span>)&#123;</span><br><span class="line">            list.add(<span class="keyword">new</span> StringBuffer(<span class="string">"0"</span>));</span><br><span class="line">            list.add(<span class="keyword">new</span> StringBuffer(<span class="string">"1"</span>));</span><br><span class="line">            <span class="keyword">return</span> list;</span><br><span class="line">        &#125;</span><br><span class="line">        ArrayList&lt;StringBuffer&gt; new_list = <span class="keyword">new</span> ArrayList&lt;StringBuffer&gt;();</span><br><span class="line">        ArrayList&lt;StringBuffer&gt; next_list = getGrey(n-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span>(StringBuffer s: next_list)&#123;</span><br><span class="line">            new_list.add(<span class="keyword">new</span> StringBuffer(<span class="string">"0"</span>).append(s));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = next_list.size() - <span class="number">1</span>; i &gt; -<span class="number">1</span> ; i--) &#123;</span><br><span class="line">            new_list.add(<span class="keyword">new</span> StringBuffer(<span class="string">"1"</span>).append(next_list.get(i)));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> new_list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">output</span><span class="params">(StringBuffer sb)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        BufferedWriter out = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> FileWriter(<span class="string">"src\\Grey\\out.txt"</span>));</span><br><span class="line">        out.write(String.valueOf(sb));</span><br><span class="line">        out.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//读取输入</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            n = ReadInput();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (n&lt;<span class="number">1</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">"Invalid Input!"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">        <span class="keyword">for</span>(StringBuffer s: getGrey(n))&#123;</span><br><span class="line">            sb.append(s);</span><br><span class="line">            sb.append(<span class="string">"\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//输出</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            output(sb);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h4><p><img src="https://img-blog.csdnimg.cn/2021032220553875.JPG" alt="项目目录"></p>
-<p><a href="https://github.com/Patrick-CH/AlgorithmExperiment.git" target="_blank" rel="noopener">代码github链接</a></p>
-
+<h2 id="ii.-gray码问题">ii. Gray码问题</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/22/%E5%88%86%E4%BA%AB%E5%88%9A%E5%86%99%E5%AE%8C%E7%9A%84%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://patrick.github.io/2021/03/22/%E5%88%86%E4%BA%AB%E5%88%9A%E5%86%99%E5%AE%8C%E7%9A%84%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C/" data-id="ckzbhweon0003c4uz4i4khglz" class="article-share-link">Share</a>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algoritm/" rel="tag">algoritm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
-
-    </footer>
-  </div>
   
-</article>
-
-
   
-    <article id="post-初见flask" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/12/10/%E5%88%9D%E8%A7%81flask/" class="article-date">
-  <time datetime="2020-12-10T14:28:53.000Z" itemprop="datePublished">2020-12-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/10/%E5%88%9D%E8%A7%81flask/">初见flask</a>
-    </h1>
-  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://patrick.github.io/2020/12/10/%E5%88%9D%E8%A7%81flask/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CYK的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/10/%E5%88%9D%E8%A7%81flask/" class="post-title-link" itemprop="url">初见flask</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-12-10 22:28:53 / Modified: 23:13:19" itemprop="dateCreated datePublished" datetime="2020-12-10T22:28:53+08:00">2020-12-10</time>
+            </span>
+
+          
+
+        </div>
       </header>
+
     
-    <div class="article-entry" itemprop="articleBody">
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>最近看了flask入门的书，其实前几天就写好了，一直没有晒出来，大致写了几个模块，还有不少问题。<br>废话不多说，直接上图！</p>
-<h1 id="注册和登录模块"><a href="#注册和登录模块" class="headerlink" title="注册和登录模块"></a>注册和登录模块</h1><p>用了mysql数据库实现了注册和登录<br><a href="https://imgchr.com/i/rFX6BT" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFX6BT.png" alt="rFX6BT.png"></a></p>
-<p>使用了session模块实现cookie免登录<br><a href="https://imgchr.com/i/rFX43R" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFX43R.jpg" alt="rFX43R.jpg"></a></p>
-<h1 id="翻译模块"><a href="#翻译模块" class="headerlink" title="翻译模块"></a>翻译模块</h1><p>百度翻译的签名实在过于复杂，我换用了某个不知名小网站的接口，稳定性不是很好</p>
+          <p>最近看了flask入门的书，其实前几天就写好了，一直没有晒出来，大致写了几个模块，还有不少问题。 废话不多说，直接上图！</p>
+<h1 id="注册和登录模块">注册和登录模块</h1>
+<p>用了mysql数据库实现了注册和登录 <a href="https://imgchr.com/i/rFX6BT" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFX6BT.png" alt="rFX6BT.png"></a></p>
+<p>使用了session模块实现cookie免登录 <a href="https://imgchr.com/i/rFX43R" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFX43R.jpg" alt="rFX43R.jpg"></a></p>
+<h1 id="翻译模块">翻译模块</h1>
+<p>百度翻译的签名实在过于复杂，我换用了某个不知名小网站的接口，稳定性不是很好</p>
 <p><a href="https://imgchr.com/i/rFj9Df" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFj9Df.png" alt="rFj9Df.png"></a></p>
-<h1 id="图片搜索下载模块"><a href="#图片搜索下载模块" class="headerlink" title="图片搜索下载模块"></a>图片搜索下载模块</h1><p>成功白嫖百度图片，手动狗头</p>
+<h1 id="图片搜索下载模块">图片搜索下载模块</h1>
+<p>成功白嫖百度图片，手动狗头</p>
 <p><a href="https://imgchr.com/i/rFjGG9" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFjGG9.jpg" alt="rFjGG9.jpg"></a></p>
-<p><a href="https://imgchr.com/i/rFjevq" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFjevq.jpg" alt="rFjevq.jpg"></a></p>
-<p><a href="https://imgchr.com/i/rFjQVU" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFjQVU.jpg" alt="rFjQVU.jpg"></a></p>
-<h1 id="其他模块"><a href="#其他模块" class="headerlink" title="其他模块"></a>其他模块</h1><p>搜索引擎模块只是简单的重定向跳转就不上图了。<br>视频下载模块遇到一些问题，还有待开发。</p>
-<h1 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h1><p>这是项目地址，有兴趣的小伙伴可以看看，欢迎提出宝贵的意见哦！<br><a href="https://github.com/Patrick-CH/webcompass" target="_blank" rel="noopener">https://github.com/Patrick-CH/webcompass</a></p>
-<h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><p>网站本身并不复杂，开发过程中也碰到不少问题和bug。从0到1的过程还是非常感人的。有同样学习flask的小伙伴欢迎一起来交流哦。留下我的邮箱吧，<a href="mailto:1648109733@qq.com">1648109733@qq.com</a>。记录一下我写的第一个网站，留作纪念吧！</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/12/10/%E5%88%9D%E8%A7%81flask/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://patrick.github.io/2020/12/10/%E5%88%9D%E8%A7%81flask/" data-id="ckzbhweop0005c4uzaeix4khd" class="article-share-link">Share</a>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flask/" rel="tag">flask</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-
-    </footer>
-  </div>
   
-</article>
-
-
   
-    <article id="post-第一次尝试python的gui" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/15/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%B0%9D%E8%AF%95python%E7%9A%84gui/" class="article-date">
-  <time datetime="2020-05-15T08:40:00.000Z" itemprop="datePublished">2020-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/15/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%B0%9D%E8%AF%95python%E7%9A%84gui/">第一次尝试python的gui</a>
-    </h1>
-  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://patrick.github.io/2020/05/15/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%B0%9D%E8%AF%95python%E7%9A%84gui/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CYK的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/15/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%B0%9D%E8%AF%95python%E7%9A%84gui/" class="post-title-link" itemprop="url">第一次尝试python的gui</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-15 16:40:00 / Modified: 17:01:24" itemprop="dateCreated datePublished" datetime="2020-05-15T16:40:00+08:00">2020-05-15</time>
+            </span>
+
+          
+
+        </div>
       </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天第一次尝试了python的gui，不得不说python的库真的很强大。别的不说先上效果图吧。 <img src="https://s1.ax1x.com/2020/05/15/YsY4Mt.jpg" alt="YsY4Mt.jpg"><br>    <img src="https://s1.ax1x.com/2020/05/15/YsYqiQ.jpg" alt="YsYqiQ.jpg"><br>直接用tkinter库的Tk方法创建了窗口，用Label方法创建了文本框按键，用ttk.combobox创建了下拉多选菜单，最后用Frame方法创建框架。程序的核心是从一个星座运势网站根据星座爬取运势。虽然不是很复杂程序，不过能写出来我还是很开心,希望以后能更新更优质的内容吧！下面是源码，有写的不好的地方欢迎大家指正，互相学习共同进步！</p>
-<p>import tkinter as tk<br>import tkinter.messagebox<br>import tkinter.ttk<br>import requests<br>import re</p>
-<p>#定义弹窗函数，显示占卜结果<br>def show_msg(name, contant):<br>    tk.messagebox.showinfo(“占卜结果”,”{},”.format(name) + contant)</p>
-<p>#定义一个函数，传入星座，返回占卜结果<br>def get_contant(cons):<br>    url_root = ‘<a href="https://www.xzw.com/fortune/&#39;" target="_blank" rel="noopener">https://www.xzw.com/fortune/&#39;</a><br>    cons_dict = {‘白羊座’:’Aries’,’金牛座’:’Taurus’,’双子座’:’：Gemini’,’巨蟹座’:’Cancer ‘,<br>        ‘狮子座’:’Leo’, ‘处女座’:’Virgo’, ‘天秤座’:’Libra’, ‘天蝎座’:’Scorpio’, ‘射手座’:’Sagittarius’,<br>        ‘摩羯座’:’Capricorn’, ‘水瓶座’:’Aquarius’, ‘双鱼座’:’Pisces’}<br>    url = url_root + cons_dict[cons]<br>    r = requests.get(url)<br>    html = r.text<br>    return re.findall(‘综合运势</strong><span>(.*?)<small>‘, html)[0]</p>
-<p>#创建窗口<br>app = tk.Tk()<br>app.title(‘神奇的占卜软件’)<br>app.geometry(‘300x250’)</p>
-<p>#创建文本框<br>f1 = tk.Frame(master=app, height=10)<br>lb = tk.Label(app, text=’请输入姓名\n我们即将开始占卜’, width=20, height=4, fg=’red’)<br>lb.pack()<br>f1.pack(pady=5)</p>
-<p>#创建输入框<br>f2 = tk.Frame(master=app, height=10)<br>text = tk.Entry(app, width=10)<br>text.pack()<br>f2.pack(pady=5)</p>
-<p>#创建下拉多选菜单<br>f3 = tk.Frame(master=app, height=10)<br>cb = tkinter.ttk.Combobox(app, width=10)<br>cb[‘values’] = (‘白羊座’,’金牛座’,’双子座’,’巨蟹座’,’狮子座’,’处女座’,’天秤座’,’天蝎座’,’射手座’,’摩羯座’,’水平座’,’双鱼座’)<br>cb.pack()<br>f3.pack(pady=5)</p>
-<p>#创建开始按钮<br>f4 = tk.Frame(master=app, height=10)<br>bt = tk.Button(text=”开始占卜”, width=10, bg=’pink’, command=lambda:show_msg(text.get(), get_contant(cb.get())))<br>bt.pack()<br>f4.pack(pady=5)</p>
-<p>#窗口主循环<br>tk.mainloop()</p>
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>今天第一次尝试了python的gui，不得不说python的库真的很强大。别的不说先上效果图吧。 <img src="https://s1.ax1x.com/2020/05/15/YsY4Mt.jpg" alt="YsY4Mt.jpg"><br>
+<img src="https://s1.ax1x.com/2020/05/15/YsYqiQ.jpg" alt="YsYqiQ.jpg"> 直接用tkinter库的Tk方法创建了窗口，用Label方法创建了文本框按键，用ttk.combobox创建了下拉多选菜单，最后用Frame方法创建框架。程序的核心是从一个星座运势网站根据星座爬取运势。虽然不是很复杂程序，不过能写出来我还是很开心,希望以后能更新更优质的内容吧！下面是源码，有写的不好的地方欢迎大家指正，互相学习共同进步！</p>
+<p>import tkinter as tk import tkinter.messagebox import tkinter.ttk import requests import re</p>
+<p>#定义弹窗函数，显示占卜结果 def show_msg(name, contant): tk.messagebox.showinfo(&quot;占卜结果&quot;,&quot;{},&quot;.format(name) + contant)</p>
+<p>#定义一个函数，传入星座，返回占卜结果 def get_contant(cons): url_root = 'https://www.xzw.com/fortune/' cons_dict = {'白羊座':'Aries','金牛座':'Taurus','双子座':'：Gemini','巨蟹座':'Cancer ',<br>
+'狮子座':'Leo', '处女座':'Virgo', '天秤座':'Libra', '天蝎座':'Scorpio', '射手座':'Sagittarius', '摩羯座':'Capricorn', '水瓶座':'Aquarius', '双鱼座':'Pisces'} url = url_root + cons_dict[cons] r = requests.get(url) html = r.text return re.findall('综合运势<span>(.*?)<small>', html)[0]</small></span></p>
+<p>#创建窗口 app = tk.Tk() app.title('神奇的占卜软件') app.geometry('300x250')</p>
+<p>#创建文本框 f1 = tk.Frame(master=app, height=10) lb = tk.Label(app, text='请输入姓名', width=20, height=4, fg='red') lb.pack() f1.pack(pady=5)</p>
+<p>#创建输入框 f2 = tk.Frame(master=app, height=10) text = tk.Entry(app, width=10) text.pack() f2.pack(pady=5)</p>
+<p>#创建下拉多选菜单 f3 = tk.Frame(master=app, height=10) cb = tkinter.ttk.Combobox(app, width=10) cb['values'] = ('白羊座','金牛座','双子座','巨蟹座','狮子座','处女座','天秤座','天蝎座','射手座','摩羯座','水平座','双鱼座') cb.pack() f3.pack(pady=5)</p>
+<p>#创建开始按钮 f4 = tk.Frame(master=app, height=10) bt = tk.Button(text=&quot;开始占卜&quot;, width=10, bg='pink', command=lambda:show_msg(text.get(), get_contant(cb.get()))) bt.pack() f4.pack(pady=5)</p>
+<p>#窗口主循环 tk.mainloop()</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/15/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%B0%9D%E8%AF%95python%E7%9A%84gui/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://patrick.github.io/2020/05/15/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%B0%9D%E8%AF%95python%E7%9A%84gui/" data-id="ckzbhweor0008c4uz6qdseo99" class="article-share-link">Share</a>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-
-    </footer>
-  </div>
   
-</article>
-
-
   
-    <article id="post-今天也是忙碌的一天" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/13/%E4%BB%8A%E5%A4%A9%E4%B9%9F%E6%98%AF%E5%BF%99%E7%A2%8C%E7%9A%84%E4%B8%80%E5%A4%A9/" class="article-date">
-  <time datetime="2020-05-13T09:16:55.000Z" itemprop="datePublished">2020-05-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/13/%E4%BB%8A%E5%A4%A9%E4%B9%9F%E6%98%AF%E5%BF%99%E7%A2%8C%E7%9A%84%E4%B8%80%E5%A4%A9/">今天也是忙碌的一天</a>
-    </h1>
-  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://patrick.github.io/2020/05/13/%E4%BB%8A%E5%A4%A9%E4%B9%9F%E6%98%AF%E5%BF%99%E7%A2%8C%E7%9A%84%E4%B8%80%E5%A4%A9/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CYK的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/13/%E4%BB%8A%E5%A4%A9%E4%B9%9F%E6%98%AF%E5%BF%99%E7%A2%8C%E7%9A%84%E4%B8%80%E5%A4%A9/" class="post-title-link" itemprop="url">今天也是忙碌的一天</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-05-13 17:16:55" itemprop="dateCreated datePublished" datetime="2020-05-13T17:16:55+08:00">2020-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-05-15 17:02:51" itemprop="dateModified" datetime="2020-05-15T17:02:51+08:00">2020-05-15</time>
+              </span>
+
+          
+
+        </div>
       </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天也是忙碌的一天，还有一堆作业没写，抽点时间更新博客。放张图片(库存)，希望疫情快快结束，大家都能恢复正常生活。<img src="https://s1.ax1x.com/2020/05/13/Ydu5Ox.jpg" alt="Ydu5Ox.jpg"></p>
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>今天也是忙碌的一天，还有一堆作业没写，抽点时间更新博客。放张图片(库存)，希望疫情快快结束，大家都能恢复正常生活。<img src="https://s1.ax1x.com/2020/05/13/Ydu5Ox.jpg" alt="Ydu5Ox.jpg"></p>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/13/%E4%BB%8A%E5%A4%A9%E4%B9%9F%E6%98%AF%E5%BF%99%E7%A2%8C%E7%9A%84%E4%B8%80%E5%A4%A9/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://patrick.github.io/2020/05/13/%E4%BB%8A%E5%A4%A9%E4%B9%9F%E6%98%AF%E5%BF%99%E7%A2%8C%E7%9A%84%E4%B8%80%E5%A4%A9/" data-id="ckzbhweok0001c4uz97069kjn" class="article-share-link">Share</a>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/" rel="tag">life</a></li></ul>
-
-    </footer>
-  </div>
   
-</article>
-
-
   
-    <article id="post-我的第一篇博客" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/13/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="article-date">
-  <time datetime="2020-05-13T09:15:32.000Z" itemprop="datePublished">2020-05-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/13/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
-    </h1>
-  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://patrick.github.io/2020/05/13/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CYK的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/13/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">我的第一篇博客</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-13 17:15:32 / Modified: 17:16:04" itemprop="dateCreated datePublished" datetime="2020-05-13T17:15:32+08:00">2020-05-13</time>
+            </span>
+
+          
+
+        </div>
       </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>第一次写博客，挺开心的，希望以后经常更新。</p>
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>第一次写博客，挺开心的，希望以后经常更新。</p>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/13/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://patrick.github.io/2020/05/13/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="ckzbhweoq0007c4uz6353g3zc" class="article-share-link">Share</a>
-      
-      
-    </footer>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
-  
-</article>
 
+  <aside class="sidebar">
+    <div class="sidebar-inner">
 
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GNN/" rel="tag">GNN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KGCN/" rel="tag">KGCN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algoritm/" rel="tag">algoritm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/binary-tree/" rel="tag">binary tree</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flask/" rel="tag">flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/" rel="tag">life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/GNN/" style="font-size: 10px;">GNN</a> <a href="/tags/KGCN/" style="font-size: 10px;">KGCN</a> <a href="/tags/algoritm/" style="font-size: 10px;">algoritm</a> <a href="/tags/binary-tree/" style="font-size: 10px;">binary tree</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/flask/" style="font-size: 10px;">flask</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/life/" style="font-size: 10px;">life</a> <a href="/tags/python/" style="font-size: 20px;">python</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/02/07/KGCN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">KGCN 论文阅读笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/06/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%87%8D%E5%BB%BA-binary-tree-rebuild/">二叉树重建 binary tree rebuild</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/22/%E5%88%86%E4%BA%AB%E5%88%9A%E5%86%99%E5%AE%8C%E7%9A%84%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C/">分享刚写完的算法分析实验</a>
-          </li>
-        
-          <li>
-            <a href="/2020/12/10/%E5%88%9D%E8%A7%81flask/">初见flask</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/15/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%B0%9D%E8%AF%95python%E7%9A%84gui/">第一次尝试python的gui</a>
-          </li>
-        
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
       </ul>
-    </div>
-  </div>
 
-  
-</aside>
-        
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2022 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
     </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
-</footer>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
 </body>
 </html>
