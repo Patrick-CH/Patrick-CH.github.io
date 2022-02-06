@@ -5,19 +5,21 @@
   
 
   
-  <title>KGCN论文阅读笔记 | CYK的个人主页</title>
+  <title>KGCN 论文阅读笔记 | CYK的个人主页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="KGCN 论文笔记原文链接 : Knowledge Graph Convolutional Networks for Recommender Systems 1 问题定义1.1已知条件大小为 M 的用户集       $U &#x3D; {u_1,u_2, …,u_M }$ 大小为 N 的物品集       $V &#x3D; {v_1,v_2, …,v_N }$ 用户-物品互动关系矩阵       $Y \in \">
+  <meta name="description" content="原文链接 : Knowledge Graph Convolutional Networks for Recommender Systems 1 问题定义1.1已知条件大小为 M 的用户集       $U &#x3D; {u_1,u_2, …,u_M }$ 大小为 N 的物品集       $V &#x3D; {v_1,v_2, …,v_N }$ 用户-物品互动关系矩阵       $Y \in \mathbb{R}">
 <meta property="og:type" content="article">
-<meta property="og:title" content="KGCN论文阅读笔记">
+<meta property="og:title" content="KGCN 论文阅读笔记">
 <meta property="og:url" content="http://patrick.github.io/2022/02/07/KGCN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="CYK的个人主页">
-<meta property="og:description" content="KGCN 论文笔记原文链接 : Knowledge Graph Convolutional Networks for Recommender Systems 1 问题定义1.1已知条件大小为 M 的用户集       $U &#x3D; {u_1,u_2, …,u_M }$ 大小为 N 的物品集       $V &#x3D; {v_1,v_2, …,v_N }$ 用户-物品互动关系矩阵       $Y \in \">
+<meta property="og:description" content="原文链接 : Knowledge Graph Convolutional Networks for Recommender Systems 1 问题定义1.1已知条件大小为 M 的用户集       $U &#x3D; {u_1,u_2, …,u_M }$ 大小为 N 的物品集       $V &#x3D; {v_1,v_2, …,v_N }$ 用户-物品互动关系矩阵       $Y \in \mathbb{R}">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/293a4bb115824eafb3557e66d00d31bb.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUGF0cmlja19jeWs=,size_16,color_FFFFFF,t_70,g_se,x_16">
-<meta property="article:published_time" content="2022-02-06T16:37:47.780Z">
-<meta property="article:modified_time" content="2022-01-19T01:43:43.535Z">
+<meta property="article:published_time" content="2022-02-06T16:40:00.000Z">
+<meta property="article:modified_time" content="2022-02-06T16:44:09.541Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="GNN">
+<meta property="article:tag" content="KGCN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/293a4bb115824eafb3557e66d00d31bb.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUGF0cmlja19jeWs=,size_16,color_FFFFFF,t_70,g_se,x_16">
   
@@ -75,7 +77,7 @@
         <section id="main"><article id="post-KGCN论文阅读笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/02/07/KGCN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time datetime="2022-02-06T16:37:47.780Z" itemprop="datePublished">2022-02-07</time>
+  <time datetime="2022-02-06T16:40:00.000Z" itemprop="datePublished">2022-02-07</time>
 </a>
     
   </div>
@@ -86,7 +88,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      KGCN论文阅读笔记
+      KGCN 论文阅读笔记
     </h1>
   
 
@@ -94,7 +96,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="KGCN-论文笔记"><a href="#KGCN-论文笔记" class="headerlink" title="KGCN 论文笔记"></a>KGCN 论文笔记</h1><p>原文链接 : <a href="https://arxiv.org/pdf/1904.12575.pdf" target="_blank" rel="noopener">Knowledge Graph Convolutional Networks for Recommender Systems</a></p>
+        <p>原文链接 : <a href="https://arxiv.org/pdf/1904.12575.pdf" target="_blank" rel="noopener">Knowledge Graph Convolutional Networks for Recommender Systems</a></p>
 <h2 id="1-问题定义"><a href="#1-问题定义" class="headerlink" title="1 问题定义"></a>1 问题定义</h2><h3 id="1-1已知条件"><a href="#1-1已知条件" class="headerlink" title="1.1已知条件"></a>1.1已知条件</h3><p>大小为 M 的用户集       $U = {u_1,u_2, …,u_M }$</p>
 <p>大小为 N 的物品集       $V = {v_1,v_2, …,v_N }$</p>
 <p>用户-物品互动关系矩阵       $Y \in \mathbb{R}^{M×N}$<br>$$<br>Y_{uv} =<br>\left{<br>             \begin{array}{<strong>lr</strong>}<br>             1, &amp; 用户 u 和 物品 v 之间存在点击、浏览、购买等关系 \<br>             0, &amp; 用户 u 与 物品 v 之间不存在上述关系 \<br>             \end{array}<br>\right.<br>$$</p>
@@ -123,9 +125,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://patrick.github.io/2022/02/07/KGCN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" data-id="ckzbhpi6r0001vguzdgqzdv5t" class="article-share-link">Share</a>
+      <a data-url="http://patrick.github.io/2022/02/07/KGCN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" data-id="ckzbhweoe0000c4uzdrf0epl0" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GNN/" rel="tag">GNN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/KGCN/" rel="tag">KGCN</a></li></ul>
+
     </footer>
   </div>
   
@@ -154,7 +158,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algoritm/" rel="tag">algoritm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/binary-tree/" rel="tag">binary tree</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flask/" rel="tag">flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/" rel="tag">life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GNN/" rel="tag">GNN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KGCN/" rel="tag">KGCN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algoritm/" rel="tag">algoritm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/binary-tree/" rel="tag">binary tree</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flask/" rel="tag">flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/" rel="tag">life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
     </div>
   </div>
 
@@ -164,7 +168,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/algoritm/" style="font-size: 10px;">algoritm</a> <a href="/tags/binary-tree/" style="font-size: 10px;">binary tree</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/flask/" style="font-size: 10px;">flask</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/life/" style="font-size: 10px;">life</a> <a href="/tags/python/" style="font-size: 20px;">python</a>
+      <a href="/tags/GNN/" style="font-size: 10px;">GNN</a> <a href="/tags/KGCN/" style="font-size: 10px;">KGCN</a> <a href="/tags/algoritm/" style="font-size: 10px;">algoritm</a> <a href="/tags/binary-tree/" style="font-size: 10px;">binary tree</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/flask/" style="font-size: 10px;">flask</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/life/" style="font-size: 10px;">life</a> <a href="/tags/python/" style="font-size: 20px;">python</a>
     </div>
   </div>
 
@@ -186,7 +190,7 @@
       <ul>
         
           <li>
-            <a href="/2022/02/07/KGCN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">KGCN论文阅读笔记</a>
+            <a href="/2022/02/07/KGCN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">KGCN 论文阅读笔记</a>
           </li>
         
           <li>
