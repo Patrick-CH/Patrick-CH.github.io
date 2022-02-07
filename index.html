@@ -146,6 +146,85 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://patrick.github.io/2022/02/07/L2-004-%E8%BF%99%E6%98%AF%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E5%90%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CYK的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/07/L2-004-%E8%BF%99%E6%98%AF%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E5%90%97/" class="post-title-link" itemprop="url">L2-004 这是二叉搜索树吗</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-02-07 18:50:01 / Modified: 19:17:51" itemprop="dateCreated datePublished" datetime="2022-02-07T18:50:01+08:00">2022-02-07</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="题目">题目</h2>
+<p>L2-004 这是二叉搜索树吗？ (25 分)</p>
+<p>一棵二叉搜索树可被递归地定义为具有下列性质的二叉树：对于任一结点，</p>
+<ul>
+<li>其左子树中所有结点的键值小于该结点的键值；</li>
+<li>其右子树中所有结点的键值大于等于该结点的键值；</li>
+<li>其左右子树都是二叉搜索树。</li>
+</ul>
+<p>所谓二叉搜索树的“镜像”，即将所有结点的左右子树对换位置后所得到的树。</p>
+<p>给定一个整数键值序列，现请你编写程序，判断这是否是对一棵二叉搜索树或其镜像进行前序遍历的结果。</p>
+<h3 id="输入格式">输入格式：</h3>
+<p>输入的第一行给出正整数 <em>N</em>（≤1000）。随后一行给出 <em>N</em> 个整数键值，其间以空格分隔。</p>
+<h3 id="输出格式">输出格式：</h3>
+<p>如果输入序列是对一棵二叉搜索树或其镜像进行前序遍历的结果，则首先在一行中输出 <code>YES</code> ，然后在下一行输出该树后序遍历的结果。数字间有 1 个空格，一行的首尾不得有多余空格。若答案是否，则输出 <code>NO</code>。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/02/07/L2-004-%E8%BF%99%E6%98%AF%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E5%90%97/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://patrick.github.io/2022/02/07/KGCN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -186,20 +265,23 @@
 
       
           <p>原文链接 : <a href="https://arxiv.org/pdf/1904.12575.pdf" target="_blank" rel="noopener">Knowledge Graph Convolutional Networks for Recommender Systems</a></p>
-<h2 id="1-问题定义"><a href="#1-问题定义" class="headerlink" title="1 问题定义"></a>1 问题定义</h2><h3 id="1-1已知条件"><a href="#1-1已知条件" class="headerlink" title="1.1已知条件"></a>1.1已知条件</h3><p>大小为 M 的用户集       $U = {u_1,u_2, …,u_M }$</p>
-<p>大小为 N 的物品集       $V = {v_1,v_2, …,v_N }$</p>
-<p>用户-物品互动关系矩阵       $Y \in \mathbb{R}^{M×N}$</p>
-<script type="math/tex; mode=display">
+<h2 id="问题定义">1 问题定义</h2>
+<h3 id="已知条件">1.1已知条件</h3>
+<p>大小为 M 的用户集 <span class="math inline">\(U = \{u_1,u_2, ...,u_M \}\)</span></p>
+<p>大小为 N 的物品集 <span class="math inline">\(V = \{v_1,v_2, ...,v_N \}\)</span></p>
+<p>用户-物品互动关系矩阵 <span class="math inline">\(Y \in \mathbb{R}^{M×N}\)</span> <span class="math display">\[
 Y_{uv} =
 \left\{  
              \begin{array}{**lr**}  
-             1, & 用户 u 和 物品 v 之间存在点击、浏览、购买等关系 \\  
-             0, & 用户 u 与 物品 v 之间不存在上述关系 \\  
+             1, &amp; 用户 u 和 物品 v 之间存在点击、浏览、购买等关系 \\  
+             0, &amp; 用户 u 与 物品 v 之间不存在上述关系 \\  
              \end{array}  
-\right.</script><p>知识图谱  $G$  由 实体-关系-实体 三元组    $(h,r,t)$    组成 </p>
-<p>​    其中    $h,t \in E\ \ ;\ r \in\ R$</p>
-<p>​    例如三元组    $(A\ Song\ of\ Ice\ and\ Fire,\ book.book.author,\  George\ Martin) $    表示t George Martin 写了书 “A Song of Ice and Fire”</p>
-<p>在许多推荐系统中，物品    $v \in V$    可能也是知识图谱中的实体。</p>
+\right.
+\]</span></p>
+<p>知识图谱 <span class="math inline">\(G\)</span> 由 实体-关系-实体 三元组 <span class="math inline">\((h,r,t)\)</span> 组成</p>
+<p>​ 其中 <span class="math inline">\(h,t \in E\ \ ;\ r \in\ R\)</span></p>
+<p>​ 例如三元组 $(A Song of Ice and Fire, book.book.author,  George Martin) $ 表示t George Martin 写了书 “A Song of Ice and Fire&quot;</p>
+<p>在许多推荐系统中，物品 <span class="math inline">\(v \in V\)</span> 可能也是知识图谱中的实体。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/02/07/KGCN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/#more" rel="contents">
@@ -249,10 +331,16 @@ Y_{uv} =
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-02-06 22:58:18 / Modified: 23:47:38" itemprop="dateCreated datePublished" datetime="2022-02-06T22:58:18+08:00">2022-02-06</time>
+              <time title="Created: 2022-02-06 22:58:18" itemprop="dateCreated datePublished" datetime="2022-02-06T22:58:18+08:00">2022-02-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-07 19:10:38" itemprop="dateModified" datetime="2022-02-07T19:10:38+08:00">2022-02-07</time>
+              </span>
 
           
 
@@ -265,12 +353,16 @@ Y_{uv} =
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>L2-006 树的遍历 (25 分)</p>
+          <h2 id="l2-006-树的遍历-25-分">L2-006 树的遍历 (25 分)</h2>
+<h3 id="题目描述">题目描述</h3>
 <p>给定一棵二叉树的后序遍历和中序遍历，请你输出其层序遍历的序列。这里假设键值都是互不相等的正整数。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第一行给出一个正整数<em>N</em>（≤30），是二叉树中结点的个数。第二行给出其后序遍历序列。第三行给出其中序遍历序列。数字间以空格分隔。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出该树的层序遍历的序列。数字间以1个空格分隔，行首尾不得有多余空格。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">7</span><br><span class="line">2 3 1 5 7 6 4</span><br><span class="line">1 2 3 4 5 6 7</span><br></pre></td></tr></table></figure>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 1 6 3 5 7 2</span><br></pre></td></tr></table></figure>
+<h4 id="输入格式">输入格式：</h4>
+<p>输入第一行给出一个正整数<em>N</em>（≤30），是二叉树中结点的个数。第二行给出其后序遍历序列。第三行给出其中序遍历序列。数字间以空格分隔。</p>
+<h4 id="输出格式">输出格式：</h4>
+<p>在一行中输出该树的层序遍历的序列。数字间以1个空格分隔，行首尾不得有多余空格。</p>
+<h4 id="输入样例">输入样例：</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">7</span><br><span class="line">2 3 1 5 7 6 4</span><br><span class="line">1 2 3 4 5 6 7</span><br></pre></td></tr></table></figure>
+<h4 id="输出样例">输出样例：</h4>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/02/06/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%87%8D%E5%BB%BA-binary-tree-rebuild/#more" rel="contents">
@@ -336,11 +428,19 @@ Y_{uv} =
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="AlgorithmExperiment"><a href="#AlgorithmExperiment" class="headerlink" title="AlgorithmExperiment"></a>AlgorithmExperiment</h1><p>算法分析课实验<br>采用分治法完成如下任务：</p>
-<h2 id="i-中位数问题"><a href="#i-中位数问题" class="headerlink" title="i.    中位数问题"></a>i.    中位数问题</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>设X[ 0 : n - 1]和Y[ 0 : n – 1 ]为两个数组，每个数组中含有n个已排好序的数。找出X和Y的2n个数的中位数。  </p>
-<h3 id="编程任务"><a href="#编程任务" class="headerlink" title="编程任务"></a>编程任务</h3><p>   利用分治策略试设计一个O (log n)时间的算法求出这2n个数的中位数。</p>
-<h3 id="数据输入"><a href="#数据输入" class="headerlink" title="数据输入"></a>数据输入</h3><p>   由文件input.txt提供输入数据。文件的第1行中有1个正整数n（n&lt;=200），表示每个数组有n个数。接下来的两行分别是X，Y数组的元素。</p>
-<h3 id="结果输出"><a href="#结果输出" class="headerlink" title="结果输出"></a>结果输出</h3>
+          <h1 id="algorithmexperiment">AlgorithmExperiment</h1>
+<p>算法分析课实验 采用分治法完成如下任务： ## i. 中位数问题 ### 问题描述 设X[ 0 : n - 1]和Y[ 0 : n – 1 ]为两个数组，每个数组中含有n个已排好序的数。找出X和Y的2n个数的中位数。<br>
+### 编程任务 利用分治策略试设计一个O (log n)时间的算法求出这2n个数的中位数。 ### 数据输入 由文件input.txt提供输入数据。文件的第1行中有1个正整数n（n&lt;=200），表示每个数组有n个数。接下来的两行分别是X，Y数组的元素。 ### 结果输出 程序运行结束时，将计算出的中位数输出到文件output.txt中。 #### 输入文件示例 input.txt</p>
+<pre><code>3
+5 15 18
+3 14 21</code></pre>
+<h4 id="输出文件示例">输出文件示例</h4>
+<p>output.txt</p>
+<pre><code>14</code></pre>
+<h3 id="实现提示">实现提示</h3>
+<p>比较两个序列的中位数大小，如果两个数相等，则该数为整个2n个数据的中位数，否则通过比较，分别减少两个序列的查找范围，确定查找的起止位置，继续查找。</p>
+<hr>
+<h2 id="ii.-gray码问题">ii. Gray码问题</h2>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/03/22/%E5%88%86%E4%BA%AB%E5%88%9A%E5%86%99%E5%AE%8C%E7%9A%84%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C/#more" rel="contents">
@@ -406,12 +506,15 @@ Y_{uv} =
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>最近看了flask入门的书，其实前几天就写好了，一直没有晒出来，大致写了几个模块，还有不少问题。<br>废话不多说，直接上图！</p>
-<h1 id="注册和登录模块"><a href="#注册和登录模块" class="headerlink" title="注册和登录模块"></a>注册和登录模块</h1><p>用了mysql数据库实现了注册和登录<br><a href="https://imgchr.com/i/rFX6BT" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFX6BT.png" alt="rFX6BT.png"></a></p>
-<p>使用了session模块实现cookie免登录<br><a href="https://imgchr.com/i/rFX43R" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFX43R.jpg" alt="rFX43R.jpg"></a></p>
-<h1 id="翻译模块"><a href="#翻译模块" class="headerlink" title="翻译模块"></a>翻译模块</h1><p>百度翻译的签名实在过于复杂，我换用了某个不知名小网站的接口，稳定性不是很好</p>
+          <p>最近看了flask入门的书，其实前几天就写好了，一直没有晒出来，大致写了几个模块，还有不少问题。 废话不多说，直接上图！</p>
+<h1 id="注册和登录模块">注册和登录模块</h1>
+<p>用了mysql数据库实现了注册和登录 <a href="https://imgchr.com/i/rFX6BT" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFX6BT.png" alt="rFX6BT.png"></a></p>
+<p>使用了session模块实现cookie免登录 <a href="https://imgchr.com/i/rFX43R" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFX43R.jpg" alt="rFX43R.jpg"></a></p>
+<h1 id="翻译模块">翻译模块</h1>
+<p>百度翻译的签名实在过于复杂，我换用了某个不知名小网站的接口，稳定性不是很好</p>
 <p><a href="https://imgchr.com/i/rFj9Df" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFj9Df.png" alt="rFj9Df.png"></a></p>
-<h1 id="图片搜索下载模块"><a href="#图片搜索下载模块" class="headerlink" title="图片搜索下载模块"></a>图片搜索下载模块</h1><p>成功白嫖百度图片，手动狗头</p>
+<h1 id="图片搜索下载模块">图片搜索下载模块</h1>
+<p>成功白嫖百度图片，手动狗头</p>
 <p><a href="https://imgchr.com/i/rFjGG9" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFjGG9.jpg" alt="rFjGG9.jpg"></a></p>
           <!--noindex-->
             <div class="post-button">
@@ -478,12 +581,18 @@ Y_{uv} =
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>今天第一次尝试了python的gui，不得不说python的库真的很强大。别的不说先上效果图吧。 <img src="https://s1.ax1x.com/2020/05/15/YsY4Mt.jpg" alt="YsY4Mt.jpg"><br>    <img src="https://s1.ax1x.com/2020/05/15/YsYqiQ.jpg" alt="YsYqiQ.jpg"><br>直接用tkinter库的Tk方法创建了窗口，用Label方法创建了文本框按键，用ttk.combobox创建了下拉多选菜单，最后用Frame方法创建框架。程序的核心是从一个星座运势网站根据星座爬取运势。虽然不是很复杂程序，不过能写出来我还是很开心,希望以后能更新更优质的内容吧！下面是源码，有写的不好的地方欢迎大家指正，互相学习共同进步！</p>
-<p>import tkinter as tk<br>import tkinter.messagebox<br>import tkinter.ttk<br>import requests<br>import re</p>
-<h1 id="定义弹窗函数，显示占卜结果"><a href="#定义弹窗函数，显示占卜结果" class="headerlink" title="定义弹窗函数，显示占卜结果"></a>定义弹窗函数，显示占卜结果</h1><p>def show_msg(name, contant):<br>    tk.messagebox.showinfo(“占卜结果”,”{},”.format(name) + contant)</p>
-<h1 id="定义一个函数，传入星座，返回占卜结果"><a href="#定义一个函数，传入星座，返回占卜结果" class="headerlink" title="定义一个函数，传入星座，返回占卜结果"></a>定义一个函数，传入星座，返回占卜结果</h1><p>def get_contant(cons):<br>    url_root = ‘<a href="https://www.xzw.com/fortune/" target="_blank" rel="noopener">https://www.xzw.com/fortune/</a>‘<br>    cons_dict = {‘白羊座’:’Aries’,’金牛座’:’Taurus’,’双子座’:’：Gemini’,’巨蟹座’:’Cancer ‘,<br>        ‘狮子座’:’Leo’, ‘处女座’:’Virgo’, ‘天秤座’:’Libra’, ‘天蝎座’:’Scorpio’, ‘射手座’:’Sagittarius’,<br>        ‘摩羯座’:’Capricorn’, ‘水瓶座’:’Aquarius’, ‘双鱼座’:’Pisces’}<br>    url = url_root + cons_dict[cons]<br>    r = requests.get(url)<br>    html = r.text<br>    return re.findall(‘综合运势&lt;/strong&gt;<span>(.*?)<small>‘, html)[0]</small></span></p>
-<h1 id="创建窗口"><a href="#创建窗口" class="headerlink" title="创建窗口"></a>创建窗口</h1><p>app = tk.Tk()<br>app.title(‘神奇的占卜软件’)<br>app.geometry(‘300x250’)</p>
-<h1 id="创建文本框"><a href="#创建文本框" class="headerlink" title="创建文本框"></a>创建文本框</h1><p>f1 = tk.Frame(master=app, height=10)<br>lb = tk.Label(app, text=’请输入姓名\n我们即将开始占卜’, width=20, height=4, fg=’red’)<br>lb.pack()<br>f1.pack(pady=5)</p>
+          <p>今天第一次尝试了python的gui，不得不说python的库真的很强大。别的不说先上效果图吧。 <img src="https://s1.ax1x.com/2020/05/15/YsY4Mt.jpg" alt="YsY4Mt.jpg"><br>
+<img src="https://s1.ax1x.com/2020/05/15/YsYqiQ.jpg" alt="YsYqiQ.jpg"> 直接用tkinter库的Tk方法创建了窗口，用Label方法创建了文本框按键，用ttk.combobox创建了下拉多选菜单，最后用Frame方法创建框架。程序的核心是从一个星座运势网站根据星座爬取运势。虽然不是很复杂程序，不过能写出来我还是很开心,希望以后能更新更优质的内容吧！下面是源码，有写的不好的地方欢迎大家指正，互相学习共同进步！</p>
+<p>import tkinter as tk import tkinter.messagebox import tkinter.ttk import requests import re</p>
+<p>#定义弹窗函数，显示占卜结果 def show_msg(name, contant): tk.messagebox.showinfo(&quot;占卜结果&quot;,&quot;{},&quot;.format(name) + contant)</p>
+<p>#定义一个函数，传入星座，返回占卜结果 def get_contant(cons): url_root = 'https://www.xzw.com/fortune/' cons_dict = {'白羊座':'Aries','金牛座':'Taurus','双子座':'：Gemini','巨蟹座':'Cancer ',<br>
+'狮子座':'Leo', '处女座':'Virgo', '天秤座':'Libra', '天蝎座':'Scorpio', '射手座':'Sagittarius', '摩羯座':'Capricorn', '水瓶座':'Aquarius', '双鱼座':'Pisces'} url = url_root + cons_dict[cons] r = requests.get(url) html = r.text return re.findall('综合运势<span>(.*?)<small>', html)[0]</small></span></p>
+<p>#创建窗口 app = tk.Tk() app.title('神奇的占卜软件') app.geometry('300x250')</p>
+<p>#创建文本框 f1 = tk.Frame(master=app, height=10) lb = tk.Label(app, text='请输入姓名', width=20, height=4, fg='red') lb.pack() f1.pack(pady=5)</p>
+<p>#创建输入框 f2 = tk.Frame(master=app, height=10) text = tk.Entry(app, width=10) text.pack() f2.pack(pady=5)</p>
+<p>#创建下拉多选菜单 f3 = tk.Frame(master=app, height=10) cb = tkinter.ttk.Combobox(app, width=10) cb['values'] = ('白羊座','金牛座','双子座','巨蟹座','狮子座','处女座','天秤座','天蝎座','射手座','摩羯座','水平座','双鱼座') cb.pack() f3.pack(pady=5)</p>
+<p>#创建开始按钮 f4 = tk.Frame(master=app, height=10) bt = tk.Button(text=&quot;开始占卜&quot;, width=10, bg='pink', command=lambda:show_msg(text.get(), get_contant(cb.get()))) bt.pack() f4.pack(pady=5)</p>
+<p>#窗口主循环 tk.mainloop()</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/05/15/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%B0%9D%E8%AF%95python%E7%9A%84gui/#more" rel="contents">
@@ -712,12 +821,12 @@ Y_{uv} =
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
