@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"patrick.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="最近看了flask入门的书，其实前几天就写好了，一直没有晒出来，大致写了几个模块，还有不少问题。 废话不多说，直接上图！ 注册和登录模块 用了mysql数据库实现了注册和登录  使用了session模块实现cookie免登录  翻译模块 百度翻译的签名实在过于复杂，我换用了某个不知名小网站的接口，稳定性不是很好  图片搜索下载模块 成功白嫖百度图片，手动狗头">
+  <meta name="description" content="最近看了flask入门的书，其实前几天就写好了，一直没有晒出来，大致写了几个模块，还有不少问题。废话不多说，直接上图！ 注册和登录模块用了mysql数据库实现了注册和登录 使用了session模块实现cookie免登录 翻译模块百度翻译的签名实在过于复杂，我换用了某个不知名小网站的接口，稳定性不是很好  图片搜索下载模块成功白嫖百度图片，手动狗头">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初见flask">
 <meta property="og:url" content="http://patrick.github.io/2020/12/10/%E5%88%9D%E8%A7%81flask/index.html">
 <meta property="og:site_name" content="CYK的博客">
-<meta property="og:description" content="最近看了flask入门的书，其实前几天就写好了，一直没有晒出来，大致写了几个模块，还有不少问题。 废话不多说，直接上图！ 注册和登录模块 用了mysql数据库实现了注册和登录  使用了session模块实现cookie免登录  翻译模块 百度翻译的签名实在过于复杂，我换用了某个不知名小网站的接口，稳定性不是很好  图片搜索下载模块 成功白嫖百度图片，手动狗头">
+<meta property="og:description" content="最近看了flask入门的书，其实前几天就写好了，一直没有晒出来，大致写了几个模块，还有不少问题。废话不多说，直接上图！ 注册和登录模块用了mysql数据库实现了注册和登录 使用了session模块实现cookie免登录 翻译模块百度翻译的签名实在过于复杂，我换用了某个不知名小网站的接口，稳定性不是很好  图片搜索下载模块成功白嫖百度图片，手动狗头">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://s3.ax1x.com/2020/12/10/rFX6BT.png">
 <meta property="og:image" content="https://s3.ax1x.com/2020/12/10/rFX43R.jpg">
@@ -198,24 +198,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>最近看了flask入门的书，其实前几天就写好了，一直没有晒出来，大致写了几个模块，还有不少问题。 废话不多说，直接上图！</p>
-<h1 id="注册和登录模块">注册和登录模块</h1>
-<p>用了mysql数据库实现了注册和登录 <a href="https://imgchr.com/i/rFX6BT" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFX6BT.png" alt="rFX6BT.png" /></a></p>
-<p>使用了session模块实现cookie免登录 <a href="https://imgchr.com/i/rFX43R" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFX43R.jpg" alt="rFX43R.jpg" /></a></p>
-<h1 id="翻译模块">翻译模块</h1>
-<p>百度翻译的签名实在过于复杂，我换用了某个不知名小网站的接口，稳定性不是很好</p>
-<p><a href="https://imgchr.com/i/rFj9Df" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFj9Df.png" alt="rFj9Df.png" /></a></p>
-<h1 id="图片搜索下载模块">图片搜索下载模块</h1>
-<p>成功白嫖百度图片，手动狗头</p>
-<p><a href="https://imgchr.com/i/rFjGG9" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFjGG9.jpg" alt="rFjGG9.jpg" /></a></p>
-<p><a href="https://imgchr.com/i/rFjevq" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFjevq.jpg" alt="rFjevq.jpg" /></a></p>
-<p><a href="https://imgchr.com/i/rFjQVU" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFjQVU.jpg" alt="rFjQVU.jpg" /></a></p>
-<h1 id="其他模块">其他模块</h1>
-<p>搜索引擎模块只是简单的重定向跳转就不上图了。 视频下载模块遇到一些问题，还有待开发。</p>
-<h1 id="项目地址">项目地址</h1>
-<p>这是项目地址，有兴趣的小伙伴可以看看，欢迎提出宝贵的意见哦！ https://github.com/Patrick-CH/webcompass</p>
-<h1 id="写在最后">写在最后</h1>
-<p>网站本身并不复杂，开发过程中也碰到不少问题和bug。从0到1的过程还是非常感人的。有同样学习flask的小伙伴欢迎一起来交流哦。留下我的邮箱吧，1648109733@qq.com。记录一下我写的第一个网站，留作纪念吧！</p>
+        <p>最近看了flask入门的书，其实前几天就写好了，一直没有晒出来，大致写了几个模块，还有不少问题。<br>废话不多说，直接上图！</p>
+<h1 id="注册和登录模块"><a href="#注册和登录模块" class="headerlink" title="注册和登录模块"></a>注册和登录模块</h1><p>用了mysql数据库实现了注册和登录<br><a href="https://imgchr.com/i/rFX6BT" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFX6BT.png" alt="rFX6BT.png"></a></p>
+<p>使用了session模块实现cookie免登录<br><a href="https://imgchr.com/i/rFX43R" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFX43R.jpg" alt="rFX43R.jpg"></a></p>
+<h1 id="翻译模块"><a href="#翻译模块" class="headerlink" title="翻译模块"></a>翻译模块</h1><p>百度翻译的签名实在过于复杂，我换用了某个不知名小网站的接口，稳定性不是很好</p>
+<p><a href="https://imgchr.com/i/rFj9Df" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFj9Df.png" alt="rFj9Df.png"></a></p>
+<h1 id="图片搜索下载模块"><a href="#图片搜索下载模块" class="headerlink" title="图片搜索下载模块"></a>图片搜索下载模块</h1><p>成功白嫖百度图片，手动狗头</p>
+<p><a href="https://imgchr.com/i/rFjGG9" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFjGG9.jpg" alt="rFjGG9.jpg"></a></p>
+<p><a href="https://imgchr.com/i/rFjevq" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFjevq.jpg" alt="rFjevq.jpg"></a></p>
+<p><a href="https://imgchr.com/i/rFjQVU" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/10/rFjQVU.jpg" alt="rFjQVU.jpg"></a></p>
+<h1 id="其他模块"><a href="#其他模块" class="headerlink" title="其他模块"></a>其他模块</h1><p>搜索引擎模块只是简单的重定向跳转就不上图了。<br>视频下载模块遇到一些问题，还有待开发。</p>
+<h1 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h1><p>这是项目地址，有兴趣的小伙伴可以看看，欢迎提出宝贵的意见哦！<br><a href="https://github.com/Patrick-CH/webcompass" target="_blank" rel="noopener">https://github.com/Patrick-CH/webcompass</a></p>
+<h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><p>网站本身并不复杂，开发过程中也碰到不少问题和bug。从0到1的过程还是非常感人的。有同样学习flask的小伙伴欢迎一起来交流哦。留下我的邮箱吧，1648109733@qq.com。记录一下我写的第一个网站，留作纪念吧！</p>
 
     </div>
 

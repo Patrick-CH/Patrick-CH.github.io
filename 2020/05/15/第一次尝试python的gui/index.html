@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"patrick.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="今天第一次尝试了python的gui，不得不说python的库真的很强大。别的不说先上效果图吧。   直接用tkinter库的Tk方法创建了窗口，用Label方法创建了文本框按键，用ttk.combobox创建了下拉多选菜单，最后用Frame方法创建框架。程序的核心是从一个星座运势网站根据星座爬取运势。虽然不是很复杂程序，不过能写出来我还是很开心,希望以后能更新更优质的内容吧！下面是源码，有写的">
+  <meta name="description" content="今天第一次尝试了python的gui，不得不说python的库真的很强大。别的不说先上效果图吧。     直接用tkinter库的Tk方法创建了窗口，用Label方法创建了文本框按键，用ttk.combobox创建了下拉多选菜单，最后用Frame方法创建框架。程序的核心是从一个星座运势网站根据星座爬取运势。虽然不是很复杂程序，不过能写出来我还是很开心,希望以后能更新更优质的内容吧！下面是源码，有写">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第一次尝试python的gui">
 <meta property="og:url" content="http://patrick.github.io/2020/05/15/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%B0%9D%E8%AF%95python%E7%9A%84gui/index.html">
 <meta property="og:site_name" content="CYK的博客">
-<meta property="og:description" content="今天第一次尝试了python的gui，不得不说python的库真的很强大。别的不说先上效果图吧。   直接用tkinter库的Tk方法创建了窗口，用Label方法创建了文本框按键，用ttk.combobox创建了下拉多选菜单，最后用Frame方法创建框架。程序的核心是从一个星座运势网站根据星座爬取运势。虽然不是很复杂程序，不过能写出来我还是很开心,希望以后能更新更优质的内容吧！下面是源码，有写的">
+<meta property="og:description" content="今天第一次尝试了python的gui，不得不说python的库真的很强大。别的不说先上效果图吧。     直接用tkinter库的Tk方法创建了窗口，用Label方法创建了文本框按键，用ttk.combobox创建了下拉多选菜单，最后用Frame方法创建框架。程序的核心是从一个星座运势网站根据星座爬取运势。虽然不是很复杂程序，不过能写出来我还是很开心,希望以后能更新更优质的内容吧！下面是源码，有写">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://s1.ax1x.com/2020/05/15/YsY4Mt.jpg">
 <meta property="og:image" content="https://s1.ax1x.com/2020/05/15/YsYqiQ.jpg">
@@ -193,18 +193,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>今天第一次尝试了python的gui，不得不说python的库真的很强大。别的不说先上效果图吧。 <img src="https://s1.ax1x.com/2020/05/15/YsY4Mt.jpg" alt="YsY4Mt.jpg" /><br />
-<img src="https://s1.ax1x.com/2020/05/15/YsYqiQ.jpg" alt="YsYqiQ.jpg" /> 直接用tkinter库的Tk方法创建了窗口，用Label方法创建了文本框按键，用ttk.combobox创建了下拉多选菜单，最后用Frame方法创建框架。程序的核心是从一个星座运势网站根据星座爬取运势。虽然不是很复杂程序，不过能写出来我还是很开心,希望以后能更新更优质的内容吧！下面是源码，有写的不好的地方欢迎大家指正，互相学习共同进步！</p>
-<p>import tkinter as tk import tkinter.messagebox import tkinter.ttk import requests import re</p>
-<p>#定义弹窗函数，显示占卜结果 def show_msg(name, contant): tk.messagebox.showinfo(&quot;占卜结果&quot;,&quot;{},&quot;.format(name) + contant)</p>
-<p>#定义一个函数，传入星座，返回占卜结果 def get_contant(cons): url_root = 'https://www.xzw.com/fortune/' cons_dict = {'白羊座':'Aries','金牛座':'Taurus','双子座':'：Gemini','巨蟹座':'Cancer ',<br />
-'狮子座':'Leo', '处女座':'Virgo', '天秤座':'Libra', '天蝎座':'Scorpio', '射手座':'Sagittarius', '摩羯座':'Capricorn', '水瓶座':'Aquarius', '双鱼座':'Pisces'} url = url_root + cons_dict[cons] r = requests.get(url) html = r.text return re.findall('综合运势</strong><span>(.*?)<small>', html)[0]</p>
-<p>#创建窗口 app = tk.Tk() app.title('神奇的占卜软件') app.geometry('300x250')</p>
-<p>#创建文本框 f1 = tk.Frame(master=app, height=10) lb = tk.Label(app, text='请输入姓名', width=20, height=4, fg='red') lb.pack() f1.pack(pady=5)</p>
-<p>#创建输入框 f2 = tk.Frame(master=app, height=10) text = tk.Entry(app, width=10) text.pack() f2.pack(pady=5)</p>
-<p>#创建下拉多选菜单 f3 = tk.Frame(master=app, height=10) cb = tkinter.ttk.Combobox(app, width=10) cb['values'] = ('白羊座','金牛座','双子座','巨蟹座','狮子座','处女座','天秤座','天蝎座','射手座','摩羯座','水平座','双鱼座') cb.pack() f3.pack(pady=5)</p>
-<p>#创建开始按钮 f4 = tk.Frame(master=app, height=10) bt = tk.Button(text=&quot;开始占卜&quot;, width=10, bg='pink', command=lambda:show_msg(text.get(), get_contant(cb.get()))) bt.pack() f4.pack(pady=5)</p>
-<p>#窗口主循环 tk.mainloop()</p>
+        <p>今天第一次尝试了python的gui，不得不说python的库真的很强大。别的不说先上效果图吧。 <img src="https://s1.ax1x.com/2020/05/15/YsY4Mt.jpg" alt="YsY4Mt.jpg"><br>    <img src="https://s1.ax1x.com/2020/05/15/YsYqiQ.jpg" alt="YsYqiQ.jpg"><br>直接用tkinter库的Tk方法创建了窗口，用Label方法创建了文本框按键，用ttk.combobox创建了下拉多选菜单，最后用Frame方法创建框架。程序的核心是从一个星座运势网站根据星座爬取运势。虽然不是很复杂程序，不过能写出来我还是很开心,希望以后能更新更优质的内容吧！下面是源码，有写的不好的地方欢迎大家指正，互相学习共同进步！</p>
+<p>import tkinter as tk<br>import tkinter.messagebox<br>import tkinter.ttk<br>import requests<br>import re</p>
+<h1 id="定义弹窗函数，显示占卜结果"><a href="#定义弹窗函数，显示占卜结果" class="headerlink" title="定义弹窗函数，显示占卜结果"></a>定义弹窗函数，显示占卜结果</h1><p>def show_msg(name, contant):<br>    tk.messagebox.showinfo(“占卜结果”,”{},”.format(name) + contant)</p>
+<h1 id="定义一个函数，传入星座，返回占卜结果"><a href="#定义一个函数，传入星座，返回占卜结果" class="headerlink" title="定义一个函数，传入星座，返回占卜结果"></a>定义一个函数，传入星座，返回占卜结果</h1><p>def get_contant(cons):<br>    url_root = ‘<a href="https://www.xzw.com/fortune/" target="_blank" rel="noopener">https://www.xzw.com/fortune/</a>‘<br>    cons_dict = {‘白羊座’:’Aries’,’金牛座’:’Taurus’,’双子座’:’：Gemini’,’巨蟹座’:’Cancer ‘,<br>        ‘狮子座’:’Leo’, ‘处女座’:’Virgo’, ‘天秤座’:’Libra’, ‘天蝎座’:’Scorpio’, ‘射手座’:’Sagittarius’,<br>        ‘摩羯座’:’Capricorn’, ‘水瓶座’:’Aquarius’, ‘双鱼座’:’Pisces’}<br>    url = url_root + cons_dict[cons]<br>    r = requests.get(url)<br>    html = r.text<br>    return re.findall(‘综合运势&lt;/strong&gt;<span>(.*?)<small>‘, html)[0]</p>
+<h1 id="创建窗口"><a href="#创建窗口" class="headerlink" title="创建窗口"></a>创建窗口</h1><p>app = tk.Tk()<br>app.title(‘神奇的占卜软件’)<br>app.geometry(‘300x250’)</p>
+<h1 id="创建文本框"><a href="#创建文本框" class="headerlink" title="创建文本框"></a>创建文本框</h1><p>f1 = tk.Frame(master=app, height=10)<br>lb = tk.Label(app, text=’请输入姓名\n我们即将开始占卜’, width=20, height=4, fg=’red’)<br>lb.pack()<br>f1.pack(pady=5)</p>
+<h1 id="创建输入框"><a href="#创建输入框" class="headerlink" title="创建输入框"></a>创建输入框</h1><p>f2 = tk.Frame(master=app, height=10)<br>text = tk.Entry(app, width=10)<br>text.pack()<br>f2.pack(pady=5)</p>
+<h1 id="创建下拉多选菜单"><a href="#创建下拉多选菜单" class="headerlink" title="创建下拉多选菜单"></a>创建下拉多选菜单</h1><p>f3 = tk.Frame(master=app, height=10)<br>cb = tkinter.ttk.Combobox(app, width=10)<br>cb[‘values’] = (‘白羊座’,’金牛座’,’双子座’,’巨蟹座’,’狮子座’,’处女座’,’天秤座’,’天蝎座’,’射手座’,’摩羯座’,’水平座’,’双鱼座’)<br>cb.pack()<br>f3.pack(pady=5)</p>
+<h1 id="创建开始按钮"><a href="#创建开始按钮" class="headerlink" title="创建开始按钮"></a>创建开始按钮</h1><p>f4 = tk.Frame(master=app, height=10)<br>bt = tk.Button(text=”开始占卜”, width=10, bg=’pink’, command=lambda:show_msg(text.get(), get_contant(cb.get())))<br>bt.pack()<br>f4.pack(pady=5)</p>
+<h1 id="窗口主循环"><a href="#窗口主循环" class="headerlink" title="窗口主循环"></a>窗口主循环</h1><p>tk.mainloop()</p>
 
     </div>
 
@@ -288,6 +286,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#定义弹窗函数，显示占卜结果"><span class="nav-number">1.</span> <span class="nav-text">定义弹窗函数，显示占卜结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义一个函数，传入星座，返回占卜结果"><span class="nav-number">2.</span> <span class="nav-text">定义一个函数，传入星座，返回占卜结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建窗口"><span class="nav-number">3.</span> <span class="nav-text">创建窗口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建文本框"><span class="nav-number">4.</span> <span class="nav-text">创建文本框</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建输入框"><span class="nav-number">5.</span> <span class="nav-text">创建输入框</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建下拉多选菜单"><span class="nav-number">6.</span> <span class="nav-text">创建下拉多选菜单</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建开始按钮"><span class="nav-number">7.</span> <span class="nav-text">创建开始按钮</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#窗口主循环"><span class="nav-number">8.</span> <span class="nav-text">窗口主循环</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
